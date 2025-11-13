@@ -1,0 +1,10 @@
+.original-img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* If you prefer the image to render at its intrinsic pixel width (not constrained by container),
+   add `max-width: none;` above. For responsive layouts, current rules keep aspect ratio and allow
+   scaling down on smaller viewports. */

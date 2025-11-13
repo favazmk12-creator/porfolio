@@ -318,6 +318,41 @@
     fixedContentPos: false
   });
 
+	// Ensure popup links have a safe fallback: open in a new tab if Magnific Popup
+	// doesn't initialize (or is disabled on small screens). Also add rel for security.
+	try {
+		$('a.popup-youtube, a.popup-vimeo, a.popup-gmaps').attr('target', '_blank').attr('rel', 'noopener noreferrer');
+
+		// Fallback: if popup doesn't open (e.g. plugin failed), open link in new tab
+		$(document).on('click', 'a.popup-youtube, a.popup-vimeo, a.popup-gmaps', function(e) {
+			// If Magnific Popup is not available, allow normal navigation (target=_blank will open new tab)
+			if (typeof $.magnificPopup === 'undefined') {
+				return;
+			}
+
+			// If the popup is disabled by Magnific (e.g., small screens based on disableOn),
+			// open the link in a new tab instead of relying on the popup.
+			if ($(window).width() < 700) {
+				// prevent default to avoid any other handlers
+				e.preventDefault();
+				window.open(this.href, '_blank');
+				return;
+			}
+
+			// If popup is available, let Magnific handle it but add a short fallback timer.
+			var href = this.href;
+			setTimeout(function() {
+				// If popup container not present, fallback to opening the URL in a new tab
+				if ($('.mfp-wrap').length === 0) {
+					window.open(href, '_blank');
+				}
+			}, 300);
+		});
+	} catch (err) {
+		// noop: if jQuery isn't available or something else fails, do nothing (anchors still have hrefs)
+		console.warn('Popup fallback script failed:', err);
+	}
+
 
 })(jQuery);
 

@@ -1,0 +1,107 @@
+/* YouTube thumbnails: consistent 16:9 ratio and title below the thumbnail */
+/* Fine-tuned card look to match the provided screenshot
+   - card radius: 12px
+   - card padding: 10px
+   - card shadow: 0 10px 25px rgba(9,10,10,0.18)
+   - play icon visual size ~44px (circle), icon font scaled accordingly
+   - caption gap: 10px
+*/
+
+#youtube-work .col-md-4.d-flex {
+  display: flex;            /* column layout so title sits below */
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card wrapper around thumbnail to create white rounded card */
+#youtube-work .yt-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px; /* card padding */
+  box-shadow: 0 10px 25px rgba(9,10,10,0.18);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+
+#youtube-work .yt-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px rgba(9,10,10,0.22);
+}
+
+/* The thumbnail itself remains a background block (16:9) inside the card */
+#youtube-work .video-thumb {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 ratio */
+  background-size: cover !important;
+  background-position: center center !important;
+  border-radius: 8px; /* inner thumbnail rounded slightly inside the card */
+  overflow: hidden;
+}
+
+/* center play icon overlay */
+#youtube-work .video-thumb .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Play icon circle and size */
+#youtube-work .video-thumb .overlay .icon-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; /* requested size */
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  color: #e53935; /* bright accent for play */
+  font-size: 20px; /* icon font size (tweak if needed) */
+  box-shadow: 0 6px 18px rgba(9,10,10,0.14);
+}
+
+/* caption spacing */
+#youtube-work p.text-center {
+  margin-top: 10px; /* caption gap */
+}
+
+@supports (aspect-ratio: 16/9) {
+  #youtube-work .video-thumb { padding-top: 0; aspect-ratio: 16 / 9; }
+}
+
+/* small responsive tweak to reduce padding on small screens */
+@media (max-width: 767px) {
+  #youtube-work .yt-card { padding: 8px; border-radius: 10px; }
+  #youtube-work .video-thumb { border-radius: 6px; }
+  #youtube-work .video-thumb .overlay .icon-play { width: 40px; height: 40px; font-size: 18px; }
+}
+
+/* Make portfolio work images use a 16:9 container so uploaded artwork fits
+   the same visual ratio as the YouTube thumbnails. This displays the
+   background-image with cover and centers it, while preventing JS that
+   forces full-height from stretching the image.
+*/
+.portfolio-entry .one-half.img,
+.portfolio-entry .col-md-5.img,
+.one-half.img.js-fullheight,
+.col-md-5.img.js-fullheight {
+  position: relative !important;
+  padding-top: 56.25% !important; /* 16:9 */
+  height: auto !important;
+  min-height: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* If any inner text needs to sit over the image, ensure absolute children
+   still position correctly */
+.portfolio-entry .one-half.img > *,
+.portfolio-entry .col-md-5.img > * {
+  position: absolute;
+  inset: 0;
+}
