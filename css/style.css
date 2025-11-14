@@ -221,7 +221,8 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; }
+  -webkit-appearance: button;
+  appearance: button; }
 
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -246,7 +247,8 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  -webkit-appearance: listbox; }
+  -webkit-appearance: listbox;
+  appearance: listbox; }
 
 textarea {
   overflow: auto;
@@ -278,7 +280,8 @@ progress {
 
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  appearance: none; }
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -9298,6 +9301,7 @@ textarea.form-control {
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -9686,5 +9690,152 @@ textarea.form-control {
   .popup-vimeo.video-thumb {
     padding-top: 0;
     aspect-ratio: 16 / 9;
+  }
+}/* Make both thumbnail descriptions the same largest size on mobile */
+@media (max-width: 767.98px) {
+  .desc-highlight-block,
+  .desc-highlight-block span {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+}
+/* Second thumbnail now uses responsive styles - no forced constraints */
+/* ===== Force larger mobile description + force mobile breaks ===== */
+@media (max-width: 767.98px) {
+  /* make both description blocks the same larger size - including first-thumb-desc */
+  .desc-highlight-block,
+  .desc-highlight-block span,
+  .thumb-row-2 .desc-highlight-block,
+  .thumb-row-2 .desc-highlight-block span {
+    font-size: 1.35rem !important;
+    line-height: 1.28 !important;
+    max-width: 92vw !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  /* force the mobile-only <br> elements to show and hide desktop breaks */
+  .mobile-only-br { display: block !important; height: 0; line-height: 0; }
+  .desktop-only-br { display: none !important; }
+
+  /* Reduce spacing so text sits closer to images on mobile while maintaining visual separation */
+  
+  /* First thumbnail: description below image with minimal gap */
+  .row.align-items-center:not(.thumb-row-2) .col-md-6.portfolio-wrap {
+    margin-bottom: 0 !important;
+  }
+  
+  .row.align-items-center:not(.thumb-row-2) .col-md-6:has(.first-thumb-desc),
+  .row.align-items-center:not(.thumb-row-2) .col-md-6.d-flex.align-items-start.justify-content-center {
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Reduce padding on inner wrapper for first thumbnail */
+  .row.align-items-center:not(.thumb-row-2) .col-md-6:has(.first-thumb-desc) > div {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Add visual separator for first thumbnail row */
+  .row.align-items-center:not(.thumb-row-2):has(.first-thumb-desc) {
+    margin-bottom: 24px !important;
+  }
+  
+  /* Second thumbnail: description below image with minimal gap */
+  .thumb-row-2 .img-col {
+    margin-bottom: 0 !important;
+  }
+  
+  .thumb-row-2 .desc-col { 
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Reduce padding on inner wrapper for second thumbnail */
+  .thumb-row-2 .desc-col > div {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    max-width: 100% !important;
+  }
+  
+  /* Make second thumbnail description more responsive */
+  .thumb-row-2 .desc-highlight-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Add visual separator for second thumbnail row */
+  .thumb-row-2 {
+    margin-bottom: 24px !important;
+  }
+
+  /* Make first thumbnail responsive like third thumbnail - hide break elements */
+  .first-thumb-desc .mobile-only-br,
+  .first-thumb-desc .desktop-only-br {
+    display: none !important;
+  }
+
+  /* Make second thumbnail responsive like third thumbnail - hide break elements */
+  .thumb-row-2 .desc-highlight-block .mobile-only-br,
+  .thumb-row-2 .desc-highlight-block .desktop-only-br {
+    display: none !important;
+  }
+}
+
+/* Desktop view: Make first and second thumbnails responsive like third thumbnail */
+@media (min-width: 768px) {
+  /* Hide all break elements so text flows naturally */
+  .first-thumb-desc .mobile-only-br,
+  .first-thumb-desc .desktop-only-br {
+    display: none !important;
+  }
+
+  /* Hide break elements for second thumbnail so text flows naturally */
+  .thumb-row-2 .desc-highlight-block .mobile-only-br,
+  .thumb-row-2 .desc-highlight-block .desktop-only-br {
+    display: none !important;
+  }
+}
+
+/* Align "Thumbnails I Designed" section to match "Reels I Shot & Edited" alignment */
+/* Ensure container has standard Bootstrap padding */
+.ftco-portfolio > .container {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+/* Ensure row maintains Bootstrap's negative margins for proper column alignment */
+.ftco-portfolio .row.justify-content-start {
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+}
+
+/* Ensure columns have standard Bootstrap padding */
+.ftco-portfolio .row.justify-content-start .col-md-7 {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+/* Mobile alignment - same rules apply */
+@media (max-width: 767.98px) {
+  .ftco-portfolio > .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .ftco-portfolio .row.justify-content-start {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+  
+  .ftco-portfolio .row.justify-content-start .col-md-7 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }

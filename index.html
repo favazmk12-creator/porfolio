@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <!-- Bootstrap Icons CDN for mute/unmute icons -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Favaz MK</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,6 +31,172 @@
   <link rel="stylesheet" href="css/instagram-gallery.css">
     <link rel="stylesheet" href="css/youtube-thumbs.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+                                /* Force 2nd thumbnail description to four lines on mobile */
+                                @media (max-width: 767.98px) {
+                                  .desc-col .desc-highlight-block {
+                                    font-size: 0.97rem !important;
+                                    max-width: 98vw;
+                                    padding: 0 10vw;
+                                    word-break: break-word;
+                                    line-height: 1.32;
+                                    text-align: center;
+                                  }
+                                  .desc-col .desc-highlight-block .mobile-only-br {
+                                    display: inline !important;
+                                  }
+                                  .desc-col .desc-highlight-block .desktop-only-br {
+                                    display: none !important;
+                                  }
+                                }
+                                @media (min-width: 768px) {
+                                  .desc-col .desc-highlight-block .mobile-only-br {
+                                    display: none !important;
+                                  }
+                                  .desc-col .desc-highlight-block .desktop-only-br {
+                                    display: inline !important;
+                                  }
+                                }
+                            /* Move 2nd thumbnail description below image on mobile only */
+                            @media (max-width: 767.98px) {
+                              .thumb-row-2 {
+                                flex-direction: column-reverse !important;
+                              }
+                              .thumb-row-2 > .desc-col {
+                                width: 100%;
+                                margin-top: 8px !important;
+                                padding-left: 0 !important;
+                                padding-right: 0 !important;
+                              }
+                              .thumb-row-2 > .desc-col > div {
+                                padding-left: 10px !important;
+                                padding-right: 10px !important;
+                                max-width: 100% !important;
+                              }
+                              .thumb-row-2 > .img-col {
+                                width: 100%;
+                              }
+                            }
+                        /* Simulate hover on mobile: apply yellow on focus/active too */
+                        .services:hover:not(.active):not(.active-2),
+                        .services:focus:not(.active):not(.active-2),
+                        .services:active:not(.active):not(.active-2) {
+                          background: #ffd782 !important;
+                          color: #222 !important;
+                        }
+                        .services:hover:not(.active):not(.active-2) .heading,
+                        .services:focus:not(.active):not(.active-2) .heading,
+                        .services:active:not(.active):not(.active-2) .heading,
+                        .services:hover:not(.active):not(.active-2) .icon span,
+                        .services:focus:not(.active):not(.active-2) .icon span,
+                        .services:active:not(.active):not(.active-2) .icon span {
+                          color: #222 !important;
+                        }
+                  /* Ensure yellow hover for services on all devices */
+                  .services:hover:not(.active):not(.active-2) {
+                    background: #ffd782 !important;
+                    color: #222 !important;
+                  }
+                  .services:hover:not(.active):not(.active-2) .heading,
+                  .services:hover:not(.active):not(.active-2) .icon span {
+                    color: #222 !important;
+                  }
+                  @media (max-width: 767.98px) {
+                    .services:hover:not(.active):not(.active-2) {
+                      background: #ffd782 !important;
+                      color: #222 !important;
+                    }
+                    .services:hover:not(.active):not(.active-2) .heading,
+                    .services:hover:not(.active):not(.active-2) .icon span {
+                      color: #222 !important;
+                    }
+                  }
+            /* Ensure service backgrounds show on all devices */
+            .services.active {
+              background: #181818 !important;
+              color: #fff !important;
+            }
+            .services.active-2 {
+              background: #181818 !important;
+              color: #fff !important;
+            }
+            /* Use the same yellow as highlight */
+            .services.active-2 {
+              background: #ffd782 !important;
+            }
+                  /* Brand & Creator Growth heading and icon white */
+                  .services.active .heading,
+                  .services.active .icon span {
+                    color: #fff !important;
+                  }
+            @media (max-width: 767.98px) {
+              .services.active, .services.active-2 {
+                background: inherit;
+              }
+              .services.active {
+                background: #181818 !important;
+              }
+              .services.active-2 {
+                background: #ffd782 !important;
+              }
+            }
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+      .container, .container-fluid {
+        overflow-x: hidden;
+      }
+      .portfolio-wrap .img {
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .col-md-6 {
+        min-width: 0;
+        overflow: hidden;
+      }
+      /* Instagram reels tweaks */
+      #instagram-reels .video-wrap { margin: 0 8px; }
+      #instagram-reels .reel-video {
+        transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1);
+        box-shadow: 0 8px 32px 0 rgba(30,30,30,0.18), 0 2px 12px 0 rgba(30,30,30,0.12);
+        border-radius: 14px;
+      }
+      #instagram-reels .video-wrap:hover .reel-video,
+      #instagram-reels .reel-active .reel-video {
+        transform: scale(1.03);
+        box-shadow: 0 0 48px 16px rgba(30,30,30,0.22), 0 4px 24px 0 rgba(30,30,30,0.16);
+        z-index: 2;
+      }
+      #instagram-reels .video-wrap {
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px 0 rgba(30,30,30,0.18), 0 2px 12px 0 rgba(30,30,30,0.12);
+        transition: box-shadow 0.3s cubic-bezier(.4,1.4,.6,1);
+      }
+      #instagram-reels .video-wrap:hover,
+      #instagram-reels .reel-active {
+        box-shadow: 0 0 48px 16px rgba(30,30,30,0.22), 0 4px 24px 0 rgba(30,30,30,0.16);
+        z-index: 2;
+      }
+      /* Latest & Greatest heading banner (darker grey) */
+      .ftco-portfolio .heading-section {
+        /* background and border removed for plain heading style */
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Subtitle under Latest & Greatest */
+      .ftco-portfolio .portfolio-subtitle {
+        font-size: 1.25rem; /* ~20px - increased */
+        line-height: 1.45;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 28px; /* extra space before thumbnails */
+      }
+      @media (max-width: 767px) { #instagram-reels .video-wrap { margin: 8px 0; } }
+    /* Second thumbnail now uses responsive styles - no forced constraints */
+    </style>
   </head>
   <body>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -39,11 +207,9 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="work.html" class="nav-link">Work</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#footer-contact" class="nav-link">Contact</a></li>
+          </ul>
 	      </div>
 	    </div>
 	  </nav>
@@ -85,8 +251,8 @@
     	<div class="container">
     		<div class="row justify-content-end">
     			<div class="col-md-8">
-    				<h2>Web <span>Designer</span>, hobbyist writer, and the CEO &amp; Founder of <span>Favaz</span></h2>
-    				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    <h2><span>Content Writer &amp; Digital Strategist</span> with 3+ Years of Experience in <span>Brand Growth</span></h2>
+    					<p>I’m Muhammed Favaz Mk — someone who loves turning ideas into clear, meaningful content. I’ve written over 200 scripts and created ad copy and strategies for international brands, helping creators share their message in an engaging way.</p>
     			</div>
     		</div>
     	</div>
@@ -99,8 +265,8 @@
             <div class="media block-6 services d-block">
               <div class="icon"><span class="flaticon-layers"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Web Design</h3>
-                <p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <h3 class="heading mb-3">Strategic Content Planning</h3>
+                <p>	I plan clear, effective content that helps creators and brands stay consistent and engaging.</p>
               </div>
             </div>      
           </div>
@@ -108,8 +274,8 @@
             <div class="media block-6 services active d-block">
               <div class="icon"><span class="flaticon-web-programming"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Web Development</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Brand & Creator Growth</h3>
+                <p>I support creators and brands in building their identity, improving reach, and growing naturally.</p>
               </div>
             </div>    
           </div>
@@ -118,16 +284,16 @@
               <div class="icon"><span class="flaticon-idea"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-3">Graphic Design</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <p>I create simple, modern graphics and thumbnails that make your content stand out.</p>
               </div>
             </div>      
           </div>
           <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services active-2 d-block">
+            <div class="media block-6 services active d-block">
               <div class="icon"><span class="flaticon-contract"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Writing</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3 class="heading mb-3">Video Editing & Production</h3>
+                <p>I edit and craft smooth, engaging videos tailored for social medias.</p>
               </div>
             </div>      
           </div>
@@ -139,166 +305,120 @@
     <section class="ftco-section ftco-portfolio">
     	<div class="container-fluid">
     		<div class="row justify-content-center pb-3">
-          <div class="col-md-12 mb-5 heading-section text-center ftco-animate">
+          <div class="col-md-12 mb-5 heading-section text-center ftco-animate" style="background: #f5f5f7; border-radius: 14px; padding: 32px 0 18px 0;" data-aos="fade-up" data-aos-duration="900" data-aos-once="true">
             <h2 class="mb-5">Latest &amp; <span>Greatest</span></h2>
           </div>
         </div>
     	</div>
 
     	<div class="container">
-    		<div class="row no-gutters">
-	  			<div class="col-md-12 portfolio-wrap">
-	  				<div class="row no-gutters align-items-center">
-	  					<div class="col-md-5 img js-fullheight" style="background-image: url(images/work-1.jpg);">
-	  						
-	  					</div>
-	  					<div class="col-md-7">
-	  						<div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
-	  							<div class="px-4 px-lg-4">
-	  								<div class="desc">
-		  								<div class="top">
-			  								<span class="subheading">Web Design {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="work.html">Midway</a></h2>
-			  							</div>
-			  							<div class="absolute">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  		</div>
-    	</div>
-
-    	<div class="container-fluid px-0 portfolio-entry">
-    		<div class="row no-gutters d-xl-flex justify-content-end text-wrapper">
-					<div class="one-half img js-fullheight" style="background-image: url('images/work-2.jpg');"></div>
-					<div class="one-half half-text d-flex justify-content-end align-items-center ftco-animate">
-						<div class="text align-items-center d-flex">
-              <div class="desc pt-5 pl-4 pr-4 pt-lg-0 pl-lg-5 pl-xl-0 pr-xl-0">
-								<div class="top">
-  								<span class="subheading">Writing {12/06/2019}</span>
-	  							<h2 class="mb-4"><a href="work.html">Workplace Office</a></h2>
-  							</div>
-  							<div class="absolute">
-	  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-	  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
-  							</div>
-							</div>
+        <div class="row justify-content-start pb-5">
+          <div class="col-md-7 heading-section ftco-animate">
+            <h2 class="mb-4" style="font-size: 32px;">Thumbnails I Designed</h2>
+            <p>Combined mood, color, and composition to spark curiosity while keeping everything visually pleasing and professional.</p>
+          </div>
+        </div>
+            <div class="row align-items-center" style="min-height:340px; display:flex;">
+              <div class="col-md-6 portfolio-wrap ftco-animate d-flex align-items-start" style="height:100%;">
+                <div class="img w-100 main-thumb" style="background-image: url(images/1st.png); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer; min-height:220px; max-width:100%;" onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)'">
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
+                <div style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
+                  <div class="desc-highlight-block first-thumb-desc" style="width:100%; text-align:center;">
+                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">Clear contrast</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> and expressive visuals highlight</span><span class="desktop-only-br"><br></span><span class="mobile-only-br"><br></span>
+                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the struggle of losing attention,</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">instantly</span><span class="desktop-only-br"><br></span><span class="mobile-only-br"> </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">attracting viewers</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> who want </span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">better focus</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
+                  </div>
+                </div>
+              </div>
             </div>
-					</div>
-    		</div>
-    	</div>
-
-    	<div class="container-fluid px-0 portfolio-entry">
-    		<div class="row no-gutters d-md-flex justify-content-start text-wrapper">
-					<div class="one-half img js-fullheight" style="background-image: url('images/work-3.jpg');"></div>
-					<div class="one-half half-text d-flex justify-content-end align-items-center ftco-animate">
-						<div class="text-2 align-items-start d-flex">
-              <div class="desc pt-5 pr-4 pl-4 pt-lg-0 pr-lg-5 pr-xl-0 pl-xl-0">
-								<div class="top">
-  								<span class="subheading">Illustration {12/06/2019}</span>
-	  							<h2 class="mb-4"><a href="work.html">Jacket Leather</a></h2>
-  							</div>
-  							<div class="absolute">
-	  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-	  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
-  							</div>
-							</div>
+            <div class="row align-items-center thumb-row-2" style="display:flex;">
+              <div class="col-md-6 d-flex align-items-start justify-content-center desc-col">
+                <div style="padding:0 32px 0 10px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
+                  <div class="desc-highlight-block" style="width:100%; text-align:center;">
+                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"A strong </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">central visual</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">and clear message make,</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span>
+                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the topic easy to </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">understand quickly</span><span class="mobile-only-br"><br></span><span class="desktop-only-br">, </span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">encouraging, viewers searching for </span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">focus tips</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 portfolio-wrap ftco-animate ml-auto img-col">
+                <div class="row align-items-center">
+                  <div class="col-md-12">
+                    <div class="img main-thumb" style="background-image: url(images/2.png); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer;" onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)';">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-					</div>
-    		</div>
-    	</div>
-
-    	<div class="container">
-    		<div class="row no-gutters">
-	  			<div class="col-md-12 portfolio-wrap">
-	  				<div class="row no-gutters align-items-center">
-	  					<div class="col-md-5 order-md-last img js-fullheight" style="background-image: url(images/work-4.jpg);">
-	  						
-	  					</div>
-	  					<div class="col-md-7">
-	  						<div class="text pt-5 pr-md-5 ftco-animate">
-	  							<div class="px-4 px-lg-4">
-	  								<div class="desc">
-		  								<div class="top">
-			  								<span class="subheading">Application {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="work.html">Topless</a></h2>
-			  							</div>
-			  							<div class="absolute">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  		</div>
-    	</div>
-
-    	<div class="container-fluid px-0 portfolio-entry">
-    		<div class="row no-gutters d-md-flex justify-content-end text-wrapper">
-					<div class="one-half img js-fullheight" style="background-image: url('images/work-5.jpg');"></div>
-					<div class="one-half half-text d-flex justify-content-end align-items-center ftco-animate">
-						<div class="text align-items-center d-flex">
-              <div class="desc pt-5 pl-5 pr-5 pt-lg-0 pl-lg-5 pl-xl-0 pr-xl-0">
-								<div class="top">
-  								<span class="subheading">Writing {12/06/2019}</span>
-	  							<h2 class="mb-4"><a href="work.html">Fashion Style</a></h2>
-  							</div>
-  							<div class="absolute">
-	  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-	  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
-  							</div>
-							</div>
+            <div class="row align-items-center">
+              <div class="col-md-6 portfolio-wrap ftco-animate d-flex align-items-start" style="height:100%;">
+                <div class="img w-100 main-thumb" style="background-image: url(images/3.jpg); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer; min-height:220px; max-width:100%;" onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)'">
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
+                <div style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
+                  <div class="desc-highlight-block" style="width:100%; text-align:center;">
+                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"Dark tones and a </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mysterious vibe</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> create instant curiosity, making viewers more likely to </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">click on</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> topics about hidden </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mind tricks</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
+                  </div>
+                </div>
+              </div>
             </div>
-					</div>
-    		</div>
     	</div>
-
-    	<div class="container">
-    		<div class="row no-gutters">
-	  			<div class="col-md-12 portfolio-wrap">
-	  				<div class="row no-gutters align-items-center">
-	  					<div class="col-md-5 img js-fullheight" style="background-image: url(images/work-6.jpg);">
-	  						
-	  					</div>
-	  					<div class="col-md-7">
-	  						<div class="text pt-5 pl-md-5 pl-md-4 ftco-animate">
-	  							<div class="px-4 px-lg-4">
-	  								<div class="desc">
-		  								<div class="top">
-			  								<span class="subheading">Illustration {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="work.html">Prickly</a></h2>
-			  							</div>
-			  							<div class="absolute">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  		</div>
-    	</div>
-
     </section>
+
+    <section class="ftco-section bg-light" id="instagram-reels">
+          <!-- ======= Reels Section Heading ======= -->
+          <div class="container">
+            <div class="row justify-content-start pb-5">
+              <div class="col-md-7 heading-section ftco-animate">
+                <h2 class="mb-4" style="font-size: 32px;">Reels I Shot &amp; Edited</h2>
+                <p>Short examples of my video work, crafted for smooth visuals and engaging storytelling.</p>
+              </div>
+            </div>
+          </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 d-flex ftco-animate mb-4">
+            <div class="video-wrap" style="width:100%; position:relative;">
+              <video class="reel-video" muted loop playsinline poster="images/reel1-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+                <source src="videos/reel1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex ftco-animate mb-4">
+            <div class="video-wrap" style="width:100%; position:relative;">
+              <video class="reel-video" muted loop playsinline poster="images/reel2-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+                <source src="videos/reel2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex ftco-animate mb-4">
+            <div class="video-wrap" style="width:100%; position:relative;">
+              <video class="reel-video" muted loop playsinline poster="images/reel3-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+                <source src="videos/reel3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 <!-- ======= YouTube Work Section ======= -->
     <!-- ======= Instagram Gallery Section (placeholder for 16 posts) ======= -->
     <section class="ftco-section bg-light" id="instagram-gallery">
       <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <span class="subheading">My Instagram Posters</span>
-            <h2 class="mb-4">Selected Instagram Posts</h2>
-            <p>16 curated Instagram posters — click to open the original post in a new tab.</p>
+        <div class="row justify-content-start pb-5">
+          <div class="col-md-7 heading-section ftco-animate">
+            <h2 class="mb-4" style="font-size: 32px;">Posters I Wrote Copy For</h2>
+            <p>Catchy copy written for 16 international brands, blending creativity with strong brand messaging.</p>
           </div>
         </div>
 
@@ -329,11 +449,10 @@
     </section>
 <section class="ftco-section bg-light" id="youtube-work">
   <div class="container">
-    <div class="row justify-content-center pb-5">
-      <div class="col-md-7 text-center heading-section ftco-animate">
-        <span class="subheading">My YouTube Work</span>
-        <h2 class="mb-4">Videos I’ve Written Content For</h2>
-        <p>Here’s a selection of YouTube videos I’ve scripted and written content for — across different inspiring channels. Click any thumbnail to watch instantly!</p>
+    <div class="row justify-content-start pb-5">
+      <div class="col-md-7 heading-section ftco-animate">
+        <h2 class="mb-4" style="font-size: 32px;">Videos I Wrote Content For</h2>
+        <p>Audience-focused scripts written for multiple creators across different niches, shaped for clarity, engagement, and a smooth narrative flow.</p>
       </div>
     </div>
 
@@ -343,19 +462,16 @@
   <a href="https://www.youtube.com/watch?v=W17Y6Dim8ao" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/W17Y6Dim8ao/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">MT Vlogs</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=qVym06AsxAw" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/qVym06AsxAw/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">MT Vlogs</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=jUcBY5jgTsM" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/jUcBY5jgTsM/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">MT Vlogs</p>
       </div>
 
       <!-- Channel 2: Time for Greatness -->
@@ -363,19 +479,16 @@
   <a href="https://www.youtube.com/watch?v=SVYg__ZEviM" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/SVYg__ZEviM/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Time for Greatness</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=eC0BtbWgRcI" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/eC0BtbWgRcI/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Time for Greatness</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=VVdHRf0pIXs" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/VVdHRf0pIXs/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Time for Greatness</p>
       </div>
 
       <!-- Channel 3: Motive Focus -->
@@ -383,19 +496,16 @@
   <a href="https://www.youtube.com/watch?v=ZLRbhxqaZpE" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/ZLRbhxqaZpE/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Motive Focus</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=i3QdqAMsWKA" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/i3QdqAMsWKA/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Motive Focus</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=eNNUGj3y-JY" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/eNNUGj3y-JY/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Motive Focus</p>
       </div>
 
       <!-- Channel 4: MK Jayadev -->
@@ -403,19 +513,16 @@
   <a href="https://www.youtube.com/watch?v=nesfoco6xEc" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/nesfoco6xEc/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">MK Jayadev</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=uczl4KRTiYY" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/uczl4KRTiYY/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">MK Jayadev</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=WNFAo9LrM1E" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/WNFAo9LrM1E/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">MK Jayadev</p>
       </div>
 
       <!-- Channel 5: Mens Club Malayalam -->
@@ -423,19 +530,16 @@
   <a href="https://www.youtube.com/watch?v=zpruwemS3Yc" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/zpruwemS3Yc/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Mens Club Malayalam</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=guUa400gFEg" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/guUa400gFEg/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Mens Club Malayalam</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=MBbLkHZGetg" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/MBbLkHZGetg/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Mens Club Malayalam</p>
       </div>
 
       <!-- Channel 6: Afi Cheriyan -->
@@ -443,13 +547,11 @@
   <a href="https://www.youtube.com/watch?v=Ahn_lhGQSJo" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/Ahn_lhGQSJo/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Afi Cheriyan</p>
       </div>
       <div class="col-md-4 d-flex ftco-animate mb-4">
   <a href="https://www.youtube.com/watch?v=v8GJk3a42kA" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/v8GJk3a42kA/hqdefault.jpg');">
           <div class="overlay text-center"><span class="icon-play"></span></div>
         </a>
-        <p class="text-center mt-2">Afi Cheriyan</p>
       </div>
 
     </div>
@@ -457,60 +559,24 @@
 </section>
 <!-- ======= End YouTube Work Section ======= -->
 
-    <footer class="ftco-footer ftco-section">
+    <footer class="ftco-footer ftco-section" id="footer-contact">
       <div class="container">
         <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+          <div class="col-md-12 d-flex justify-content-center">
+            <div class="ftco-footer-widget mb-4 text-center">
+              <h2 class="ftco-heading-2">Contact</h2>
+              <ul class="list-unstyled" style="font-size:1.1rem; display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:center; margin-bottom:0;">
+                <li style="display:flex; align-items:center; gap:6px;"><span class="icon icon-map-marker" style="color:#fff; opacity:0.92; margin-right:6px;"></span><span class="text" style="color:#fff; opacity:0.92; font-weight:500;">Kerala, Kochi</span></li>
+                <li style="display:flex; align-items:center; gap:6px;"><a href="tel:9061926060" style="color:inherit; text-decoration:none;"><span class="icon icon-phone" style="margin-right:6px;"></span><span class="text">9061926060</span></a></li>
+                <li style="display:flex; align-items:center; gap:6px;"><a href="mailto:favazmk12@gmail.com" style="color:inherit; text-decoration:none;"><span class="icon icon-envelope" style="margin-right:6px;"></span><span class="text">favazmk12@gmail.com</span></a></li>
+                <li style="display:flex; align-items:center; gap:6px;"><a href="https://www.instagram.com/fa_was.mk?igsh=MTRnOGlmc25hMjQzZQ==" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;"><span class="icon-instagram" style="margin-right:6px;"></span><span class="text">Instagram</span></a></li>
               </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Information</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Portfolio</a></li>
-                <li><a href="#" class="py-2 d-block">Privacy</a></li>
-                <li><a href="#" class="py-2 d-block">Terms Condition</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Work</a></li>
-                <li><a href="#" class="py-2 d-block">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
           </div>
         </div>
       </div>
@@ -537,6 +603,70 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Autoplay reel videos when they enter viewport and pause when out of view
+    (function(){
+      const vids = document.querySelectorAll('.reel-video');
+      if(!vids.length) return;
+
+      // IntersectionObserver to play/pause when visible
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(e => {
+          const v = e.target;
+          if(e.isIntersecting && e.intersectionRatio > 0.4){
+            v.play().catch(()=>{});
+          } else {
+            v.pause();
+          }
+        });
+      }, { threshold: [0.4] });
+
+      vids.forEach(v=>{
+        v.muted = true; // ensure muted for autoplay
+        // clear any existing active state
+        const wrap = v.parentElement;
+        wrap.classList.remove('reel-active');
+        const btn = wrap.querySelector('.mute-toggle');
+        if(btn) {
+          btn.innerHTML = '<i class="bi bi-volume-mute"></i>';
+        }
+        obs.observe(v);
+      });
+
+      // Mute toggle: ensure only one video is unmuted at a time
+      const buttons = document.querySelectorAll('.mute-toggle');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', ()=>{
+          const wrap = btn.parentElement;
+          const video = wrap.querySelector('.reel-video');
+          if(!video) return;
+
+          const willUnmute = video.muted; // if currently muted -> will unmute
+
+          // mute all videos and remove active class
+          vids.forEach(v=>{
+            v.muted = true;
+            const w = v.parentElement;
+            w.classList.remove('reel-active');
+            const b = w.querySelector('.mute-toggle');
+            if(b) b.innerHTML = '<i class="bi bi-volume-mute"></i>';
+          });
+
+          if(willUnmute){
+            // unmute the clicked one, restart from the beginning, and give it the popup effect
+            video.muted = false;
+            wrap.classList.add('reel-active');
+            btn.innerHTML = '<i class="bi bi-volume-up"></i>';
+            try { video.currentTime = 0; } catch(e) { /* some browsers may restrict setting currentTime until loaded */ }
+            video.play().catch(()=>{});
+          } else {
+            // user clicked while already unmuted; keep everything muted
+            btn.innerHTML = '<i class="bi bi-volume-mute"></i>';
+          }
+        });
+      });
+    })();
+  </script>
     
   </body>
 </html>
