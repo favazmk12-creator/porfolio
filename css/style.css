@@ -14112,14 +14112,12 @@ textarea.form-control {
 
 @media (max-width: 991.98px) {
   .services-section .media {
-    padding: 20px 20px !important; /* same padding for icon + text */
+    padding: 20px 20px !important;
     display: flex;
-    align-items: flex-start; /* keeps icon + text aligned */
+    align-items: flex-start;
   }
 
   .services-section .media .icon {
-    margin-right: 15px; /* spacing between icon and text */
+    margin-right: 15px;
   }
 }
-
-
