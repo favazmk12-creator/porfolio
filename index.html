@@ -1,591 +1,828 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <!-- Bootstrap Icons CDN for mute/unmute icons -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <title>Favaz MK</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+<head>
+  <!-- Bootstrap Icons CDN for mute/unmute icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <title>Favaz MK</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/aos.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
 
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/instagram-gallery.css">
-    <link rel="stylesheet" href="css/youtube-thumbs.css">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-                                /* Force 2nd thumbnail description to four lines on mobile */
-                                @media (max-width: 767.98px) {
-                                  .desc-col .desc-highlight-block {
-                                    font-size: 0.97rem !important;
-                                    max-width: 98vw;
-                                    padding: 0 10vw;
-                                    word-break: break-word;
-                                    line-height: 1.32;
-                                    text-align: center;
-                                  }
-                                  .desc-col .desc-highlight-block .mobile-only-br {
-                                    display: inline !important;
-                                  }
-                                  .desc-col .desc-highlight-block .desktop-only-br {
-                                    display: none !important;
-                                  }
-                                }
-                                @media (min-width: 768px) {
-                                  .desc-col .desc-highlight-block .mobile-only-br {
-                                    display: none !important;
-                                  }
-                                  .desc-col .desc-highlight-block .desktop-only-br {
-                                    display: inline !important;
-                                  }
-                                }
-                            /* Move 2nd thumbnail description below image on mobile only */
-                            @media (max-width: 767.98px) {
-                              .thumb-row-2 {
-                                flex-direction: column-reverse !important;
-                              }
-                              .thumb-row-2 > .desc-col {
-                                width: 100%;
-                                margin-top: 8px !important;
-                                padding-left: 0 !important;
-                                padding-right: 0 !important;
-                              }
-                              .thumb-row-2 > .desc-col > div {
-                                padding-left: 10px !important;
-                                padding-right: 10px !important;
-                                max-width: 100% !important;
-                              }
-                              .thumb-row-2 > .img-col {
-                                width: 100%;
-                              }
-                            }
-                        /* Simulate hover on mobile: apply yellow on focus/active too */
-                        .services:hover:not(.active):not(.active-2),
-                        .services:focus:not(.active):not(.active-2),
-                        .services:active:not(.active):not(.active-2) {
-                          background: #ffd782 !important;
-                          color: #222 !important;
-                        }
-                        .services:hover:not(.active):not(.active-2) .heading,
-                        .services:focus:not(.active):not(.active-2) .heading,
-                        .services:active:not(.active):not(.active-2) .heading,
-                        .services:hover:not(.active):not(.active-2) .icon span,
-                        .services:focus:not(.active):not(.active-2) .icon span,
-                        .services:active:not(.active):not(.active-2) .icon span {
-                          color: #222 !important;
-                        }
-                  /* Ensure yellow hover for services on all devices */
-                  .services:hover:not(.active):not(.active-2) {
-                    background: #ffd782 !important;
-                    color: #222 !important;
-                  }
-                  .services:hover:not(.active):not(.active-2) .heading,
-                  .services:hover:not(.active):not(.active-2) .icon span {
-                    color: #222 !important;
-                  }
-                  @media (max-width: 767.98px) {
-                    .services:hover:not(.active):not(.active-2) {
-                      background: #ffd782 !important;
-                      color: #222 !important;
-                    }
-                    .services:hover:not(.active):not(.active-2) .heading,
-                    .services:hover:not(.active):not(.active-2) .icon span {
-                      color: #222 !important;
-                    }
-                  }
-            /* Ensure service backgrounds show on all devices */
-            .services.active {
-              background: #181818 !important;
-              color: #fff !important;
-            }
-            .services.active-2 {
-              background: #181818 !important;
-              color: #fff !important;
-            }
-            /* Use the same yellow as highlight */
-            .services.active-2 {
-              background: #ffd782 !important;
-            }
-                  /* Brand & Creator Growth heading and icon white */
-                  .services.active .heading,
-                  .services.active .icon span {
-                    color: #fff !important;
-                  }
-            @media (max-width: 767.98px) {
-              .services.active, .services.active-2 {
-                background: inherit;
-              }
-              .services.active {
-                background: #181818 !important;
-              }
-              .services.active-2 {
-                background: #ffd782 !important;
-              }
-            }
-      html, body {
-        overflow-x: hidden;
+  <link rel="stylesheet" href="css/youtube-thumbs.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Force 2nd thumbnail description to four lines on mobile */
+    @media (max-width: 767.98px) {
+      .desc-col .desc-highlight-block {
+        font-size: 0.97rem !important;
+        max-width: 98vw;
+        padding: 0 10vw;
+        word-break: break-word;
+        line-height: 1.32;
+        text-align: center;
+      }
+
+      .desc-col .desc-highlight-block .mobile-only-br {
+        display: inline !important;
+      }
+
+      .desc-col .desc-highlight-block .desktop-only-br {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .desc-col .desc-highlight-block .mobile-only-br {
+        display: none !important;
+      }
+
+      .desc-col .desc-highlight-block .desktop-only-br {
+        display: inline !important;
+      }
+    }
+
+    /* Move 2nd thumbnail description below image on mobile only */
+    @media (max-width: 767.98px) {
+      .thumb-row-2 {
+        flex-direction: column-reverse !important;
+      }
+
+      .thumb-row-2>.desc-col {
         width: 100%;
-        max-width: 100vw;
+        margin-top: 8px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
-      .container, .container-fluid {
-        overflow-x: hidden;
+
+      .thumb-row-2>.desc-col>div {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        max-width: 100% !important;
       }
-      .portfolio-wrap .img {
-        overflow: hidden;
-        max-width: 100%;
+
+      .thumb-row-2>.img-col {
+        width: 100%;
       }
-      .col-md-6 {
-        min-width: 0;
-        overflow: hidden;
+    }
+
+    /* Simulate hover on mobile: apply yellow on focus/active too */
+    .services:hover:not(.active):not(.active-2),
+    .services:focus:not(.active):not(.active-2),
+    .services:active:not(.active):not(.active-2) {
+      background: #ffd782 !important;
+      color: #222 !important;
+    }
+
+    .services:hover:not(.active):not(.active-2) .heading,
+    .services:focus:not(.active):not(.active-2) .heading,
+    .services:active:not(.active):not(.active-2) .heading,
+    .services:hover:not(.active):not(.active-2) .icon span,
+    .services:focus:not(.active):not(.active-2) .icon span,
+    .services:active:not(.active):not(.active-2) .icon span {
+      color: #222 !important;
+    }
+
+    /* Ensure yellow hover for services on all devices */
+    .services:hover:not(.active):not(.active-2) {
+      background: #ffd782 !important;
+      color: #222 !important;
+    }
+
+    .services:hover:not(.active):not(.active-2) .heading,
+    .services:hover:not(.active):not(.active-2) .icon span {
+      color: #222 !important;
+    }
+
+    @media (max-width: 767.98px) {
+      .services:hover:not(.active):not(.active-2) {
+        background: #ffd782 !important;
+        color: #222 !important;
       }
-      /* Instagram reels tweaks */
-      #instagram-reels .video-wrap { margin: 0 8px; }
-      #instagram-reels .reel-video {
-        transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1);
-        box-shadow: 0 8px 32px 0 rgba(30,30,30,0.18), 0 2px 12px 0 rgba(30,30,30,0.12);
-        border-radius: 14px;
+
+      .services:hover:not(.active):not(.active-2) .heading,
+      .services:hover:not(.active):not(.active-2) .icon span {
+        color: #222 !important;
       }
-      #instagram-reels .video-wrap:hover .reel-video,
-      #instagram-reels .reel-active .reel-video {
-        transform: scale(1.03);
-        box-shadow: 0 0 48px 16px rgba(30,30,30,0.22), 0 4px 24px 0 rgba(30,30,30,0.16);
-        z-index: 2;
+    }
+
+    /* Ensure service backgrounds show on all devices */
+    .services.active {
+      background: #181818 !important;
+      color: #fff !important;
+    }
+
+    .services.active-2 {
+      background: #181818 !important;
+      color: #fff !important;
+    }
+
+    /* Use the same yellow as highlight */
+    .services.active-2 {
+      background: #ffd782 !important;
+    }
+
+    /* Brand & Creator Growth heading and icon white */
+    .services.active .heading,
+    .services.active .icon span {
+      color: #fff !important;
+    }
+
+    @media (max-width: 767.98px) {
+
+      .services.active,
+      .services.active-2 {
+        background: inherit;
       }
+
+      .services.active {
+        background: #181818 !important;
+      }
+
+      .services.active-2 {
+        background: #ffd782 !important;
+      }
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+
+    .container,
+    .container-fluid {
+      overflow-x: hidden;
+    }
+
+    .portfolio-wrap .img {
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    .col-md-6 {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    /* Instagram reels tweaks */
+    #instagram-reels .video-wrap {
+      margin: 0 8px;
+    }
+
+    #instagram-reels .reel-video {
+      transition: transform 0.3s cubic-bezier(.4, 1.4, .6, 1), box-shadow 0.3s cubic-bezier(.4, 1.4, .6, 1);
+      box-shadow: 0 8px 32px 0 rgba(30, 30, 30, 0.18), 0 2px 12px 0 rgba(30, 30, 30, 0.12);
+      border-radius: 14px;
+    }
+
+    #instagram-reels .video-wrap:hover .reel-video,
+    #instagram-reels .reel-active .reel-video {
+      transform: scale(1.03);
+      box-shadow: 0 0 48px 16px rgba(30, 30, 30, 0.22), 0 4px 24px 0 rgba(30, 30, 30, 0.16);
+      z-index: 2;
+    }
+
+    #instagram-reels .video-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px 0 rgba(30, 30, 30, 0.18), 0 2px 12px 0 rgba(30, 30, 30, 0.12);
+      transition: box-shadow 0.3s cubic-bezier(.4, 1.4, .6, 1);
+    }
+
+    #instagram-reels .video-wrap:hover,
+    #instagram-reels .reel-active {
+      box-shadow: 0 0 48px 16px rgba(30, 30, 30, 0.22), 0 4px 24px 0 rgba(30, 30, 30, 0.16);
+      z-index: 2;
+    }
+
+    /* Latest & Greatest heading banner (darker grey) */
+    .ftco-portfolio .heading-section {
+      /* background and border removed for plain heading style */
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Subtitle under Latest & Greatest */
+    .ftco-portfolio .portfolio-subtitle {
+      font-size: 1.25rem;
+      /* ~20px - increased */
+      line-height: 1.45;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 28px;
+      /* extra space before thumbnails */
+    }
+
+    @media (max-width: 767px) {
       #instagram-reels .video-wrap {
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 8px 32px 0 rgba(30,30,30,0.18), 0 2px 12px 0 rgba(30,30,30,0.12);
-        transition: box-shadow 0.3s cubic-bezier(.4,1.4,.6,1);
+        margin: 8px 0;
       }
-      #instagram-reels .video-wrap:hover,
-      #instagram-reels .reel-active {
-        box-shadow: 0 0 48px 16px rgba(30,30,30,0.22), 0 4px 24px 0 rgba(30,30,30,0.16);
-        z-index: 2;
-      }
-      /* Latest & Greatest heading banner (darker grey) */
-      .ftco-portfolio .heading-section {
-        /* background and border removed for plain heading style */
-        padding: 0;
-        box-sizing: border-box;
-      }
-      /* Subtitle under Latest & Greatest */
-      .ftco-portfolio .portfolio-subtitle {
-        font-size: 1.25rem; /* ~20px - increased */
-        line-height: 1.45;
-        color: #333;
-        font-weight: 600;
-        margin-bottom: 28px; /* extra space before thumbnails */
-      }
-      @media (max-width: 767px) { #instagram-reels .video-wrap { margin: 8px 0; } }
+    }
+
     /* Second thumbnail now uses responsive styles - no forced constraints */
-    </style>
-  </head>
-  <body>
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Favaz</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+  </style>
+</head>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="#footer-contact" class="nav-link">Contact</a></li>
-          </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    
-    <section id="home-section" class="hero">
-    	<h1 class="vr text-center">Favaz</h1>
-		  <div class="js-fullheight home-wrap d-flex">
-		  	<div class="half order-md-last"></div>
-		  	<div class="half">
-			  	<div class="home-slider owl-carousel">
-			      <div class="slider-item js-fullheight">
-			      	<div class="overlay"></div>
-			        <div class="container-fluid p-0">
-			          <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-			          	<div class="one-third img js-fullheight" style="background-image:url(images/bg_1.jpg);">
-			          	</div>
-			        	</div>
-			        </div>
-			      </div>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Favaz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
 
-			      <div class="slider-item js-fullheight">
-			      	<div class="overlay"></div>
-			        <div class="container-fluid p-0">
-			          <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
-			          	<div class="one-third img js-fullheight" style="background-image:url(images/bg_2.jpg);">
-			          		<div class="overlay"></div>
-			          	</div>
-			        	</div>
-			        </div>
-			      </div>
-			    </div>
-			  </div>
-	    </div>
-    </section>
-
-
-    <section class="ftco-section ftco-intro">
-    	<div class="container">
-    		<div class="row justify-content-end">
-    			<div class="col-md-8">
-                    <h2><span>Content Writer &amp; Digital Strategist</span> with 3+ Years of Experience in <span>Brand Growth</span></h2>
-    					<p>I’m Muhammed Favaz Mk — someone who loves turning ideas into clear, meaningful content. I’ve written over 200 scripts and created ad copy and strategies for international brands, helping creators share their message in an engaging way.</p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-    <section class="services-section py-5 py-md-0">
-      <div class="container">
-        <div class="row no-gutters d-flex">
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-layers"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Strategic Content Planning</h3>
-                <p>	I plan clear, effective content that helps creators and brands stay consistent and engaging.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services active d-block">
-              <div class="icon"><span class="flaticon-web-programming"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Brand & Creator Growth</h3>
-                <p>I support creators and brands in building their identity, improving reach, and growing naturally.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-idea"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Graphic Design</h3>
-                <p>I create simple, modern graphics and thumbnails that make your content stand out.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services active d-block">
-              <div class="icon"><span class="flaticon-contract"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Video Editing & Production</h3>
-                <p>I edit and craft smooth, engaging videos tailored for social medias.</p>
-              </div>
-            </div>      
-          </div>
-        </div>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="#footer-contact" class="nav-link">Contact</a></li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </nav>
+  <!-- END nav -->
 
-
-    <section class="ftco-section ftco-portfolio">
-    	<div class="container-fluid">
-    		<div class="row justify-content-center pb-3">
-          <div class="col-md-12 mb-5 heading-section text-center ftco-animate" style="background: #f5f5f7; border-radius: 14px; padding: 32px 0 18px 0;" data-aos="fade-up" data-aos-duration="900" data-aos-once="true">
-            <h2 class="mb-5">Latest &amp; <span>Greatest</span></h2>
-          </div>
-        </div>
-    	</div>
-
-    	<div class="container">
-        <div class="row justify-content-start pb-5">
-          <div class="col-md-7 heading-section ftco-animate">
-            <h2 class="mb-4" style="font-size: 32px;">Thumbnails I Designed</h2>
-            <p>Combined mood, color, and composition to spark curiosity while keeping everything visually pleasing and professional.</p>
-          </div>
-        </div>
-            <div class="row align-items-center" style="min-height:340px; display:flex;">
-              <div class="col-md-6 portfolio-wrap ftco-animate d-flex align-items-start" style="height:100%;">
-                <div class="img w-100 main-thumb" style="background-image: url(images/1st.png); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer; min-height:220px; max-width:100%;" onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)'">
+  <section id="home-section" class="hero">
+    <h1 class="vr text-center">Favaz</h1>
+    <div class="js-fullheight home-wrap d-flex">
+      <div class="half order-md-last"></div>
+      <div class="half">
+        <div class="home-slider owl-carousel">
+          <div class="slider-item js-fullheight">
+            <div class="overlay"></div>
+            <div class="container-fluid p-0">
+              <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
+                data-scrollax-parent="true">
+                <div class="one-third img js-fullheight" style="background-image:url(images/bg_1.jpg);">
                 </div>
-              </div>
-              <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
-                <div style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
-                  <div class="desc-highlight-block first-thumb-desc" style="width:100%; text-align:center;">
-                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">Clear contrast</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> and expressive visuals highlight</span><span class="desktop-only-br"><br></span><span class="mobile-only-br"><br></span>
-                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the struggle of losing attention,</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">instantly</span><span class="desktop-only-br"><br></span><span class="mobile-only-br"> </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">attracting viewers</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> who want </span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">better focus</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row align-items-center thumb-row-2" style="display:flex;">
-              <div class="col-md-6 d-flex align-items-start justify-content-center desc-col">
-                <div style="padding:0 32px 0 10px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
-                  <div class="desc-highlight-block" style="width:100%; text-align:center;">
-                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"A strong </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">central visual</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">and clear message make,</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span>
-                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the topic easy to </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">understand quickly</span><span class="mobile-only-br"><br></span><span class="desktop-only-br">, </span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">encouraging, viewers searching for </span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">focus tips</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 portfolio-wrap ftco-animate ml-auto img-col">
-                <div class="row align-items-center">
-                  <div class="col-md-12">
-                    <div class="img main-thumb" style="background-image: url(images/2.png); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer;" onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)';">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row align-items-center">
-              <div class="col-md-6 portfolio-wrap ftco-animate d-flex align-items-start" style="height:100%;">
-                <div class="img w-100 main-thumb" style="background-image: url(images/3.jpg); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer; min-height:220px; max-width:100%;" onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)'">
-                </div>
-              </div>
-              <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
-                <div style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
-                  <div class="desc-highlight-block" style="width:100%; text-align:center;">
-                    <span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"Dark tones and a </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mysterious vibe</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> create instant curiosity, making viewers more likely to </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">click on</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> topics about hidden </span><span style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mind tricks</span><span style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section bg-light" id="instagram-reels">
-          <!-- ======= Reels Section Heading ======= -->
-          <div class="container">
-            <div class="row justify-content-start pb-5">
-              <div class="col-md-7 heading-section ftco-animate">
-                <h2 class="mb-4" style="font-size: 32px;">Reels I Shot &amp; Edited</h2>
-                <p>Short examples of my video work, crafted for smooth visuals and engaging storytelling.</p>
               </div>
             </div>
           </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 d-flex ftco-animate mb-4">
-            <div class="video-wrap" style="width:100%; position:relative;">
-              <video class="reel-video" muted loop playsinline poster="images/reel1-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
-                <source src="videos/reel1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
-            </div>
-          </div>
 
-          <div class="col-md-4 d-flex ftco-animate mb-4">
-            <div class="video-wrap" style="width:100%; position:relative;">
-              <video class="reel-video" muted loop playsinline poster="images/reel2-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
-                <source src="videos/reel2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
-            </div>
-          </div>
-
-          <div class="col-md-4 d-flex ftco-animate mb-4">
-            <div class="video-wrap" style="width:100%; position:relative;">
-              <video class="reel-video" muted loop playsinline poster="images/reel3-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
-                <source src="videos/reel3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
+          <div class="slider-item js-fullheight">
+            <div class="overlay"></div>
+            <div class="container-fluid p-0">
+              <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
+                data-scrollax-parent="true">
+                <div class="one-third img js-fullheight" style="background-image:url(images/bg_2.jpg);">
+                  <div class="overlay"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-<!-- ======= YouTube Work Section ======= -->
-    <!-- ======= Instagram Gallery Section (placeholder for 16 posts) ======= -->
-    <section class="ftco-section bg-light" id="instagram-gallery">
-      <div class="container">
-        <div class="row justify-content-start pb-5">
-          <div class="col-md-7 heading-section ftco-animate">
-            <h2 class="mb-4" style="font-size: 32px;">Posters I Wrote Copy For</h2>
-            <p>Catchy copy written for 16 international brands, blending creativity with strong brand messaging.</p>
+
+  <section class="ftco-section ftco-intro">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-md-8">
+          <h2><span>Content Writer &amp; Digital Strategist</span> with 3+ Years of Experience in <span>Brand
+              Growth</span></h2>
+          <p>I’m Muhammed Favaz Mk — someone who loves turning ideas into clear, meaningful content. I’ve written over
+            200 scripts and created ad copy and strategies for international brands, helping creators share their
+            message in an engaging way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section py-5 py-md-0">
+    <div class="container">
+      <div class="row no-gutters d-flex">
+        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block">
+            <div class="icon"><span class="flaticon-layers"></span></div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Strategic Content Planning</h3>
+              <p> I plan clear, effective content that helps creators and brands stay consistent and engaging.</p>
+            </div>
           </div>
         </div>
-
-        <div class="grid">
-          <!-- Updated with the new 16 Instagram poster links provided by user -->
-          <div class="item"><a href="https://www.instagram.com/p/DQbB097Eq7K/?igsh=MXVoMjV4cWlmdW5zcA==" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DQbB097Eq7K/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DP3qJRZlchx/?igsh=MWV2MWQxYXgybzhpMg==" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DP3qJRZlchx/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DOyATQKErWM/?igsh=MWxnbDlvbnV3M2lr" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DOyATQKErWM/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DPF9Or2AaVx/?igsh=MTd3ajlqc2wzd2cyaw==" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DPF9Or2AaVx/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-
-          <div class="item"><a href="https://www.instagram.com/p/DPAvi04gYZy/?igsh=ZDA5ZnNvYnk3dW1i" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DPAvi04gYZy/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DQgzdrhEhiS/?igsh=cnl0am4wejFiN3Vu" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DQgzdrhEhiS/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DQeNxLqEo0d/?igsh=MWF2NWlraGFtcHQwMA==" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DQeNxLqEo0d/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DQl_Dnujs0m/?igsh=YTAyaGVleTJtanBi" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DQl_Dnujs0m/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-
-          <div class="item"><a href="https://www.instagram.com/p/DQoahVLEm7U/?igsh=eXpzaHQxbDFncG1w" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DQoahVLEm7U/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DQl7HydktaF/?igsh=emYzZnZsZnFyMWJz" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DQl7HydktaF/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DQJoWrHAXCP/?igsh=Z2g4NmVidWJpajQx" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('images/inst-indus.jpg');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DQHFmN_Ab3U/?igsh=MW1qZ2x4emphc211Ng==" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('images/inst-jabal.jpg');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-
-          <div class="item"><a href="https://www.instagram.com/p/DQgqEJikgYc/?igsh=cHBzMmpxMnN4M2t6" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DQgqEJikgYc/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DPF-AkAEnyG/?igsh=djJ6aDQwanNrejcz" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DPF-AkAEnyG/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DQeO86hEpr5/?igsh=MTFub291ZzZ4b2JxNQ==" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('images/inst-akshatha.jpg');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
-          <div class="item"><a href="https://www.instagram.com/p/DPBhiNBEjOh/?igsh=MTcwcTd2YXM4cHVvcg==" target="_blank" rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('https://www.instagram.com/p/DPBhiNBEjOh/media/?size=l');"><div class="overlay"><span class="icon-instagram"></span></div></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services active d-block">
+            <div class="icon"><span class="flaticon-web-programming"></span></div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Brand & Creator Growth</h3>
+              <p>I support creators and brands in building their identity, improving reach, and growing naturally.</p>
+            </div>
+          </div>
         </div>
-
+        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block">
+            <div class="icon"><span class="flaticon-idea"></span></div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Graphic Design</h3>
+              <p>I create simple, modern graphics and thumbnails that make your content stand out.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services active d-block">
+            <div class="icon"><span class="flaticon-contract"></span></div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Video Editing & Production</h3>
+              <p>I edit and craft smooth, engaging videos tailored for social medias.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-<section class="ftco-section bg-light" id="youtube-work">
-  <div class="container">
-    <div class="row justify-content-start pb-5">
-      <div class="col-md-7 heading-section ftco-animate">
-        <h2 class="mb-4" style="font-size: 32px;">Videos I Wrote Content For</h2>
-        <p>Audience-focused scripts written for multiple creators across different niches, shaped for clarity, engagement, and a smooth narrative flow.</p>
+    </div>
+  </section>
+
+
+  <section class="ftco-section ftco-portfolio">
+    <div class="container-fluid">
+      <div class="row justify-content-center pb-3">
+        <div class="col-md-12 mb-5 heading-section text-center ftco-animate"
+          style="background: #f5f5f7; border-radius: 14px; padding: 32px 0 18px 0;" data-aos="fade-up"
+          data-aos-duration="900" data-aos-once="true">
+          <h2 class="mb-5">Latest &amp; <span>Greatest</span></h2>
+        </div>
       </div>
     </div>
 
-    <div class="row d-flex justify-content-center">
-      <!-- Channel 1: MT Vlogs -->
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=W17Y6Dim8ao" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/W17Y6Dim8ao/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
+    <div class="container">
+      <div class="row justify-content-start pb-5">
+        <div class="col-md-7 heading-section ftco-animate">
+          <h2 class="mb-4" style="font-size: 32px;">Thumbnails I Designed</h2>
+          <p>Combined mood, color, and composition to spark curiosity while keeping everything visually pleasing and
+            professional.</p>
+        </div>
       </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=qVym06AsxAw" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/qVym06AsxAw/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=jUcBY5jgTsM" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/jUcBY5jgTsM/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-
-      <!-- Channel 2: Time for Greatness -->
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=SVYg__ZEviM" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/SVYg__ZEviM/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=eC0BtbWgRcI" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/eC0BtbWgRcI/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=VVdHRf0pIXs" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/VVdHRf0pIXs/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-
-      <!-- Channel 3: Motive Focus -->
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=ZLRbhxqaZpE" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/ZLRbhxqaZpE/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=i3QdqAMsWKA" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/i3QdqAMsWKA/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=eNNUGj3y-JY" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/eNNUGj3y-JY/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-
-      <!-- Channel 4: MK Jayadev -->
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=nesfoco6xEc" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/nesfoco6xEc/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=uczl4KRTiYY" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/uczl4KRTiYY/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=WNFAo9LrM1E" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/WNFAo9LrM1E/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-
-      <!-- Channel 5: Mens Club Malayalam -->
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=zpruwemS3Yc" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/zpruwemS3Yc/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=guUa400gFEg" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/guUa400gFEg/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=MBbLkHZGetg" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/MBbLkHZGetg/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-
-      <!-- Channel 6: Afi Cheriyan -->
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=Ahn_lhGQSJo" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/Ahn_lhGQSJo/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-      <div class="col-md-4 d-flex ftco-animate mb-4">
-  <a href="https://www.youtube.com/watch?v=v8GJk3a42kA" target="_blank" rel="noopener noreferrer" class="video-thumb d-block" style="background-image:url('https://img.youtube.com/vi/v8GJk3a42kA/hqdefault.jpg');">
-          <div class="overlay text-center"><span class="icon-play"></span></div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ======= End YouTube Work Section ======= -->
-
-    <footer class="ftco-footer ftco-section" id="footer-contact">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 d-flex justify-content-center">
-            <div class="ftco-footer-widget mb-4 text-center">
-              <h2 class="ftco-heading-2">Contact</h2>
-              <ul class="list-unstyled" style="font-size:1.1rem; display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:center; margin-bottom:0;">
-                <li style="display:flex; align-items:center; gap:6px;"><span class="icon icon-map-marker" style="color:#fff; opacity:0.92; margin-right:6px;"></span><span class="text" style="color:#fff; opacity:0.92; font-weight:500;">Kerala, Kochi</span></li>
-                <li style="display:flex; align-items:center; gap:6px;"><a href="tel:9061926060" style="color:inherit; text-decoration:none;"><span class="icon icon-phone" style="margin-right:6px;"></span><span class="text">9061926060</span></a></li>
-                <li style="display:flex; align-items:center; gap:6px;"><a href="mailto:favazmk12@gmail.com" style="color:inherit; text-decoration:none;"><span class="icon icon-envelope" style="margin-right:6px;"></span><span class="text">favazmk12@gmail.com</span></a></li>
-                <li style="display:flex; align-items:center; gap:6px;"><a href="https://www.instagram.com/fa_was.mk?igsh=MTRnOGlmc25hMjQzZQ==" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none;"><span class="icon-instagram" style="margin-right:6px;"></span><span class="text">Instagram</span></a></li>
-              </ul>
+      <div class="row align-items-center" style="min-height:340px; display:flex;">
+        <div class="col-md-6 portfolio-wrap ftco-animate d-flex align-items-start" style="height:100%;">
+          <div class="img w-100 main-thumb"
+            style="background-image: url(images/1st.png); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer; min-height:220px; max-width:100%;"
+            onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)'"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)'">
+          </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
+          <div
+            style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
+            <div class="desc-highlight-block first-thumb-desc" style="width:100%; text-align:center;">
+              <span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">Clear
+                contrast</span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> and
+                expressive visuals highlight</span><span class="desktop-only-br"><br></span><span
+                class="mobile-only-br"><br></span>
+              <span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the
+                struggle of losing attention,</span><span class="mobile-only-br"><br></span><span
+                class="desktop-only-br"> </span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">instantly</span><span
+                class="desktop-only-br"><br></span><span class="mobile-only-br"> </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">attracting
+                viewers</span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> who
+                want </span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">better
+                focus</span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+      </div>
+      <div class="row align-items-center thumb-row-2" style="display:flex;">
+        <div class="col-md-6 d-flex align-items-start justify-content-center desc-col">
+          <div
+            style="padding:0 32px 0 10px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
+            <div class="desc-highlight-block" style="width:100%; text-align:center;">
+              <span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"A
+                strong </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">central
+                visual</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">and
+                clear message make,</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span>
+              <span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the
+                topic easy to </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">understand
+                quickly</span><span class="mobile-only-br"><br></span><span class="desktop-only-br">, </span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">encouraging,
+                viewers searching for </span><span class="mobile-only-br"><br></span><span class="desktop-only-br">
+              </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">focus
+                tips</span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 portfolio-wrap ftco-animate ml-auto img-col">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="img main-thumb"
+                style="background-image: url(images/2.png); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer;"
+                onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)';">
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-    
-  
+      <div class="row align-items-center">
+        <div class="col-md-6 portfolio-wrap ftco-animate d-flex align-items-start" style="height:100%;">
+          <div class="img w-100 main-thumb"
+            style="background-image: url(images/3.jpg); padding-top: 56.25%; height: auto; position: relative; border-radius: 18px; box-shadow: 0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6); transition: transform 0.3s cubic-bezier(.4,1.4,.6,1), box-shadow 0.3s cubic-bezier(.4,1.4,.6,1); cursor: pointer; min-height:220px; max-width:100%;"
+            onmouseover="this.style.transform='scale(0.96)'; this.style.boxShadow='0 0 40px 16px rgba(30,30,30,0.15), 0 0 0 4px rgba(255,255,255,0.7)'"
+            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 24px 8px rgba(30,30,30,0.11), 0 0 0 2px rgba(255,255,255,0.6)'">
+          </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
+          <div
+            style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
+            <div class="desc-highlight-block" style="width:100%; text-align:center;">
+              <span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"Dark
+                tones and a </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mysterious
+                vibe</span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">
+                create instant curiosity, making viewers more likely to </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">click
+                on</span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">
+                topics about hidden </span><span
+                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mind
+                tricks</span><span
+                style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section bg-light" id="instagram-reels">
+    <!-- ======= Reels Section Heading ======= -->
+    <div class="container">
+      <div class="row justify-content-start pb-5">
+        <div class="col-md-7 heading-section ftco-animate">
+          <h2 class="mb-4" style="font-size: 32px;">Reels I Shot &amp; Edited</h2>
+          <p>Short examples of my video work, crafted for smooth visuals and engaging storytelling.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <div class="video-wrap" style="width:100%; position:relative;">
+            <video class="reel-video" muted loop playsinline poster="images/reel1-poster.jpg"
+              style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+              <source src="videos/reel1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="mute-toggle" aria-label="Unmute video"
+              style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i
+                class="bi bi-volume-mute"></i></button>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <div class="video-wrap" style="width:100%; position:relative;">
+            <video class="reel-video" muted loop playsinline poster="images/reel2-poster.jpg"
+              style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+              <source src="videos/reel2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="mute-toggle" aria-label="Unmute video"
+              style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i
+                class="bi bi-volume-mute"></i></button>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <div class="video-wrap" style="width:100%; position:relative;">
+            <video class="reel-video" muted loop playsinline poster="images/reel3-poster.jpg"
+              style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+              <source src="videos/reel3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="mute-toggle" aria-label="Unmute video"
+              style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i
+                class="bi bi-volume-mute"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= YouTube Work Section ======= -->
+  <!-- ======= Instagram Gallery Section (placeholder for 16 posts) ======= -->
+  <section class="ftco-section bg-light" id="instagram-gallery">
+    <div class="container">
+      <div class="row justify-content-start pb-5">
+        <div class="col-md-7 heading-section ftco-animate">
+          <h2 class="mb-4" style="font-size: 32px;">Posters I Wrote Copy For</h2>
+          <p>Catchy copy written for 16 international brands, blending creativity with strong brand messaging.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Updated with the new 16 Instagram poster links provided by user -->
+        <div class="item"><a href="https://www.instagram.com/p/DQbB097Eq7K/?igsh=MXVoMjV4cWlmdW5zcA==" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DQbB097Eq7K/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DP3qJRZlchx/?igsh=MWV2MWQxYXgybzhpMg==" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DP3qJRZlchx/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DOyATQKErWM/?igsh=MWxnbDlvbnV3M2lr" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DOyATQKErWM/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DPF9Or2AaVx/?igsh=MTd3ajlqc2wzd2cyaw==" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DPF9Or2AaVx/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+
+        <div class="item"><a href="https://www.instagram.com/p/DPAvi04gYZy/?igsh=ZDA5ZnNvYnk3dW1i" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DPAvi04gYZy/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DQgzdrhEhiS/?igsh=cnl0am4wejFiN3Vu" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DQgzdrhEhiS/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DQeNxLqEo0d/?igsh=MWF2NWlraGFtcHQwMA==" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DQeNxLqEo0d/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DQl_Dnujs0m/?igsh=YTAyaGVleTJtanBi" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DQl_Dnujs0m/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+
+        <div class="item"><a href="https://www.instagram.com/p/DQoahVLEm7U/?igsh=eXpzaHQxbDFncG1w" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DQoahVLEm7U/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DQl7HydktaF/?igsh=emYzZnZsZnFyMWJz" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DQl7HydktaF/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DQJoWrHAXCP/?igsh=Z2g4NmVidWJpajQx" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('images/inst-indus.jpg');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DQHFmN_Ab3U/?igsh=MW1qZ2x4emphc211Ng==" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('images/inst-jabal.jpg');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+
+        <div class="item"><a href="https://www.instagram.com/p/DQgqEJikgYc/?igsh=cHBzMmpxMnN4M2t6" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DQgqEJikgYc/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DPF-AkAEnyG/?igsh=djJ6aDQwanNrejcz" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DPF-AkAEnyG/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DQeO86hEpr5/?igsh=MTFub291ZzZ4b2JxNQ==" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb" style="background-image:url('images/inst-akshatha.jpg');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+        <div class="item"><a href="https://www.instagram.com/p/DPBhiNBEjOh/?igsh=MTcwcTd2YXM4cHVvcg==" target="_blank"
+            rel="noopener noreferrer" class="instagram-thumb"
+            style="background-image:url('https://www.instagram.com/p/DPBhiNBEjOh/media/?size=l');">
+            <div class="overlay"><span class="icon-instagram"></span></div>
+          </a></div>
+      </div>
+
+    </div>
+  </section>
+  <section class="ftco-section bg-light" id="youtube-work">
+    <div class="container">
+      <div class="row justify-content-start pb-5">
+        <div class="col-md-7 heading-section ftco-animate">
+          <h2 class="mb-4" style="font-size: 32px;">Videos I Wrote Content For</h2>
+          <p>Audience-focused scripts written for multiple creators across different niches, shaped for clarity,
+            engagement, and a smooth narrative flow.</p>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <!-- Channel 1: MT Vlogs -->
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=W17Y6Dim8ao" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/W17Y6Dim8ao/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=qVym06AsxAw" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/qVym06AsxAw/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=jUcBY5jgTsM" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/jUcBY5jgTsM/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+
+        <!-- Channel 2: Time for Greatness -->
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=SVYg__ZEviM" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/SVYg__ZEviM/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=eC0BtbWgRcI" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/eC0BtbWgRcI/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=VVdHRf0pIXs" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/VVdHRf0pIXs/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+
+        <!-- Channel 3: Motive Focus -->
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=ZLRbhxqaZpE" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/ZLRbhxqaZpE/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=i3QdqAMsWKA" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/i3QdqAMsWKA/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=eNNUGj3y-JY" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/eNNUGj3y-JY/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+
+        <!-- Channel 4: MK Jayadev -->
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=nesfoco6xEc" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/nesfoco6xEc/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=uczl4KRTiYY" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/uczl4KRTiYY/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=WNFAo9LrM1E" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/WNFAo9LrM1E/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+
+        <!-- Channel 5: Mens Club Malayalam -->
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=zpruwemS3Yc" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/zpruwemS3Yc/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=guUa400gFEg" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/guUa400gFEg/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=MBbLkHZGetg" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/MBbLkHZGetg/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+
+        <!-- Channel 6: Afi Cheriyan -->
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=Ahn_lhGQSJo" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/Ahn_lhGQSJo/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+        <div class="col-md-4 d-flex ftco-animate mb-4">
+          <a href="https://www.youtube.com/watch?v=v8GJk3a42kA" target="_blank" rel="noopener noreferrer"
+            class="video-thumb d-block"
+            style="background-image:url('https://img.youtube.com/vi/v8GJk3a42kA/hqdefault.jpg');">
+            <div class="overlay text-center"><span class="icon-play"></span></div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ======= End YouTube Work Section ======= -->
+
+  <footer class="ftco-footer ftco-section" id="footer-contact">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12 d-flex justify-content-center">
+          <div class="ftco-footer-widget mb-4 text-center">
+            <h2 class="ftco-heading-2">Contact</h2>
+            <ul class="list-unstyled"
+              style="font-size:1.1rem; display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:center; margin-bottom:0;">
+              <li style="display:flex; align-items:center; gap:6px;"><span class="icon icon-map-marker"
+                  style="color:#fff; opacity:0.92; margin-right:6px;"></span><span class="text"
+                  style="color:#fff; opacity:0.92; font-weight:500;">Kerala, Kochi</span></li>
+              <li style="display:flex; align-items:center; gap:6px;"><a href="tel:9061926060"
+                  style="color:inherit; text-decoration:none;"><span class="icon icon-phone"
+                    style="margin-right:6px;"></span><span class="text">9061926060</span></a></li>
+              <li style="display:flex; align-items:center; gap:6px;"><a href="mailto:favazmk12@gmail.com"
+                  style="color:inherit; text-decoration:none;"><span class="icon icon-envelope"
+                    style="margin-right:6px;"></span><span class="text">favazmk12@gmail.com</span></a></li>
+              <li style="display:flex; align-items:center; gap:6px;"><a
+                  href="https://www.instagram.com/fa_was.mk?igsh=MTRnOGlmc25hMjQzZQ==" target="_blank"
+                  rel="noopener noreferrer" style="color:inherit; text-decoration:none;"><span class="icon-instagram"
+                    style="margin-right:6px;"></span><span class="text">Instagram</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
 
 
   <script src="js/jquery.min.js"></script>
@@ -600,34 +837,35 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
   <script>
     // Autoplay reel videos when they enter viewport and pause when out of view
-    (function(){
+    (function () {
       const vids = document.querySelectorAll('.reel-video');
-      if(!vids.length) return;
+      if (!vids.length) return;
 
       // IntersectionObserver to play/pause when visible
-      const obs = new IntersectionObserver((entries)=>{
+      const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           const v = e.target;
-          if(e.isIntersecting && e.intersectionRatio > 0.4){
-            v.play().catch(()=>{});
+          if (e.isIntersecting && e.intersectionRatio > 0.4) {
+            v.play().catch(() => { });
           } else {
             v.pause();
           }
         });
       }, { threshold: [0.4] });
 
-      vids.forEach(v=>{
+      vids.forEach(v => {
         v.muted = true; // ensure muted for autoplay
         // clear any existing active state
         const wrap = v.parentElement;
         wrap.classList.remove('reel-active');
         const btn = wrap.querySelector('.mute-toggle');
-        if(btn) {
+        if (btn) {
           btn.innerHTML = '<i class="bi bi-volume-mute"></i>';
         }
         obs.observe(v);
@@ -636,29 +874,29 @@
       // Mute toggle: ensure only one video is unmuted at a time
       const buttons = document.querySelectorAll('.mute-toggle');
       buttons.forEach(btn => {
-        btn.addEventListener('click', ()=>{
+        btn.addEventListener('click', () => {
           const wrap = btn.parentElement;
           const video = wrap.querySelector('.reel-video');
-          if(!video) return;
+          if (!video) return;
 
           const willUnmute = video.muted; // if currently muted -> will unmute
 
           // mute all videos and remove active class
-          vids.forEach(v=>{
+          vids.forEach(v => {
             v.muted = true;
             const w = v.parentElement;
             w.classList.remove('reel-active');
             const b = w.querySelector('.mute-toggle');
-            if(b) b.innerHTML = '<i class="bi bi-volume-mute"></i>';
+            if (b) b.innerHTML = '<i class="bi bi-volume-mute"></i>';
           });
 
-          if(willUnmute){
+          if (willUnmute) {
             // unmute the clicked one, restart from the beginning, and give it the popup effect
             video.muted = false;
             wrap.classList.add('reel-active');
             btn.innerHTML = '<i class="bi bi-volume-up"></i>';
-            try { video.currentTime = 0; } catch(e) { /* some browsers may restrict setting currentTime until loaded */ }
-            video.play().catch(()=>{});
+            try { video.currentTime = 0; } catch (e) { /* some browsers may restrict setting currentTime until loaded */ }
+            video.play().catch(() => { });
           } else {
             // user clicked while already unmuted; keep everything muted
             btn.innerHTML = '<i class="bi bi-volume-mute"></i>';
@@ -667,6 +905,7 @@
       });
     })();
   </script>
-    
-  </body>
+
+</body>
+
 </html>
