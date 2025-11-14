@@ -14073,14 +14073,17 @@ textarea.form-control {
   }
 }
 
-/* Align "Thumbnails I Designed" section to match "Reels I Shot & Edited" alignment */
+/* -----------------------------------------
+   ALIGN "Thumbnails I Designed" SECTION
+------------------------------------------ */
+
 /* Ensure container has standard Bootstrap padding */
 .ftco-portfolio>.container {
   padding-left: 15px !important;
   padding-right: 15px !important;
 }
 
-/* Ensure row maintains Bootstrap's negative margins for proper column alignment */
+/* Ensure row maintains Bootstrap's negative margins */
 .ftco-portfolio .row.justify-content-start {
   margin-left: -15px !important;
   margin-right: -15px !important;
@@ -14092,7 +14095,7 @@ textarea.form-control {
   padding-right: 15px !important;
 }
 
-/* Mobile alignment - same rules apply */
+/* Mobile alignment */
 @media (max-width: 767.98px) {
   .ftco-portfolio>.container {
     padding-left: 15px !important;
@@ -14110,6 +14113,9 @@ textarea.form-control {
   }
 }
 
+/* -----------------------------------------
+   SERVICES SECTION ICON ALIGNMENT
+------------------------------------------ */
 @media (max-width: 991.98px) {
   .services-section .media {
     padding: 20px 20px !important;
@@ -14120,4 +14126,84 @@ textarea.form-control {
   .services-section .media .icon {
     margin-right: 15px;
   }
+}
+
+/* -----------------------------------------
+   CENTER ALL TEXT IN PORTFOLIO SECTION
+------------------------------------------ */
+.ftco-portfolio .desc-highlight-block,
+.ftco-portfolio .heading-section h2,
+.ftco-portfolio .heading-section p {
+  text-align: center !important;
+}
+
+/* Center text container inside column */
+.ftco-portfolio .desc-col,
+.ftco-portfolio .col-md-6.d-flex.align-items-start.justify-content-center {
+  justify-content: center !important;
+}
+
+/* -----------------------------------------
+   RESPONSIVE TEXT SIZE FIXES
+------------------------------------------ */
+
+/* Tablet */
+@media (max-width: 991px) {
+  .ftco-portfolio .desc-highlight-block span {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .ftco-portfolio .heading-section h2 {
+    font-size: 26px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .ftco-portfolio .desc-highlight-block span {
+    font-size: 0.95rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .ftco-portfolio .heading-section h2 {
+    font-size: 22px !important;
+  }
+
+  .ftco-portfolio .heading-section p {
+    font-size: 0.95rem !important;
+  }
+
+  .ftco-portfolio .row.align-items-center {
+    margin-bottom: 24px;
+  }
+}
+
+/* ==========================================================
+   🔥🔥 MAIN FIX: CENTER IMAGES PERFECTLY (DESKTOP + MOBILE)
+   ========================================================== */
+
+/* Make each portfolio row center its child columns */
+.ftco-portfolio .row.align-items-center {
+  display: flex !important;
+  justify-content: center !important;
+  /* horizontal center */
+  align-items: center !important;
+  /* vertical center */
+  width: 100%;
+}
+
+/* Make each column a centered flexbox */
+.ftco-portfolio .row.align-items-center>.col-md-6 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+}
+
+/* Center the image wrapper perfectly inside the column */
+.ftco-portfolio .main-thumb {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
 }
