@@ -4,7 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -14010,7 +14010,7 @@ textarea.form-control {
 
   /* Add visual separator for first thumbnail row */
   .row.align-items-center:not(.thumb-row-2):has(.first-thumb-desc) {
-    margin-bottom: 24px !important;
+    margin-bottom: 48px !important;
   }
 
   /* Second thumbnail: description below image with minimal gap */
@@ -14041,7 +14041,17 @@ textarea.form-control {
 
   /* Add visual separator for second thumbnail row */
   .thumb-row-2 {
-    margin-bottom: 24px !important;
+    margin-bottom: 48px !important;
+  }
+  
+  /* Add spacing after third row as well */
+  .ftco-portfolio .row.align-items-center:last-of-type {
+    margin-bottom: 48px !important;
+  }
+  
+  /* General spacing for all portfolio rows on mobile */
+  .ftco-portfolio .row.align-items-center {
+    margin-bottom: 48px !important;
   }
 
   /* Make first thumbnail responsive like third thumbnail - hide break elements */
@@ -14132,9 +14142,9 @@ textarea.form-control {
    CENTER ALL TEXT IN PORTFOLIO SECTION
 ------------------------------------------ */
 .ftco-portfolio .desc-highlight-block,
-.ftco-portfolio .heading-section h2,
-.ftco-portfolio .heading-section p {
-  text-align: center !important;
+.ftco-portfolio .row.pb-5 .heading-section h2,
+.ftco-portfolio .row.pb-5 .heading-section p {
+    text-align: left !important;
 }
 
 /* Center text container inside column */
@@ -14206,4 +14216,16 @@ textarea.form-control {
   margin-left: auto !important;
   margin-right: auto !important;
   display: block;
+}
+
+/* Override inline align-items-start for desktop to center images vertically */
+@media (min-width: 768px) {
+  .ftco-portfolio .row.align-items-center > .col-md-6.portfolio-wrap {
+    align-items: center !important;
+  }
+  
+  /* Apply margin-top to all images in portfolio section */
+  .ftco-portfolio .row.align-items-center .col-md-6.portfolio-wrap .main-thumb {
+    margin-top: 8rem;
+  }
 }
