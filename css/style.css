@@ -4,7 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -14010,7 +14010,7 @@ textarea.form-control {
 
   /* Add visual separator for first thumbnail row */
   .row.align-items-center:not(.thumb-row-2):has(.first-thumb-desc) {
-    margin-bottom: 24px !important;
+    margin-bottom: 48px !important;
   }
 
   /* Second thumbnail: description below image with minimal gap */
@@ -14041,7 +14041,17 @@ textarea.form-control {
 
   /* Add visual separator for second thumbnail row */
   .thumb-row-2 {
-    margin-bottom: 24px !important;
+    margin-bottom: 48px !important;
+  }
+  
+  /* Add spacing after third row as well */
+  .ftco-portfolio .row.align-items-center:last-of-type {
+    margin-bottom: 48px !important;
+  }
+  
+  /* General spacing for all portfolio rows on mobile */
+  .ftco-portfolio .row.align-items-center {
+    margin-bottom: 48px !important;
   }
 
   /* Make first thumbnail responsive like third thumbnail - hide break elements */
@@ -14073,14 +14083,17 @@ textarea.form-control {
   }
 }
 
-/* Align "Thumbnails I Designed" section to match "Reels I Shot & Edited" alignment */
+/* -----------------------------------------
+   ALIGN "Thumbnails I Designed" SECTION
+------------------------------------------ */
+
 /* Ensure container has standard Bootstrap padding */
 .ftco-portfolio>.container {
   padding-left: 15px !important;
   padding-right: 15px !important;
 }
 
-/* Ensure row maintains Bootstrap's negative margins for proper column alignment */
+/* Ensure row maintains Bootstrap's negative margins */
 .ftco-portfolio .row.justify-content-start {
   margin-left: -15px !important;
   margin-right: -15px !important;
@@ -14092,7 +14105,7 @@ textarea.form-control {
   padding-right: 15px !important;
 }
 
-/* Mobile alignment - same rules apply */
+/* Mobile alignment */
 @media (max-width: 767.98px) {
   .ftco-portfolio>.container {
     padding-left: 15px !important;
@@ -14110,6 +14123,9 @@ textarea.form-control {
   }
 }
 
+/* -----------------------------------------
+   SERVICES SECTION ICON ALIGNMENT
+------------------------------------------ */
 @media (max-width: 991.98px) {
   .services-section .media {
     padding: 20px 20px !important;
@@ -14122,6 +14138,94 @@ textarea.form-control {
   }
 }
 
-.ftco-portfolio .row.align-items-center .col-md-6.portfolio-wrap .main-thumb {
-  margin-top: 8rem;
+/* -----------------------------------------
+   CENTER ALL TEXT IN PORTFOLIO SECTION
+------------------------------------------ */
+.ftco-portfolio .desc-highlight-block,
+.ftco-portfolio .row.pb-5 .heading-section h2,
+.ftco-portfolio .row.pb-5 .heading-section p {
+    text-align: left !important;
+}
+
+/* Center text container inside column */
+.ftco-portfolio .desc-col,
+.ftco-portfolio .col-md-6.d-flex.align-items-start.justify-content-center {
+  justify-content: center !important;
+}
+
+/* -----------------------------------------
+   RESPONSIVE TEXT SIZE FIXES
+------------------------------------------ */
+
+/* Tablet */
+@media (max-width: 991px) {
+  .ftco-portfolio .desc-highlight-block span {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .ftco-portfolio .heading-section h2 {
+    font-size: 26px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .ftco-portfolio .desc-highlight-block span {
+    font-size: 0.95rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .ftco-portfolio .heading-section h2 {
+    font-size: 22px !important;
+  }
+
+  .ftco-portfolio .heading-section p {
+    font-size: 0.95rem !important;
+  }
+
+  .ftco-portfolio .row.align-items-center {
+    margin-bottom: 24px;
+  }
+}
+
+/* ==========================================================
+   🔥🔥 MAIN FIX: CENTER IMAGES PERFECTLY (DESKTOP + MOBILE)
+   ========================================================== */
+
+/* Make each portfolio row center its child columns */
+.ftco-portfolio .row.align-items-center {
+  display: flex !important;
+  justify-content: center !important;
+  /* horizontal center */
+  align-items: center !important;
+  /* vertical center */
+  width: 100%;
+}
+
+/* Make each column a centered flexbox */
+.ftco-portfolio .row.align-items-center>.col-md-6 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+}
+
+/* Center the image wrapper perfectly inside the column */
+.ftco-portfolio .main-thumb {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+}
+
+/* Override inline align-items-start for desktop to center images vertically */
+@media (min-width: 768px) {
+  .ftco-portfolio .row.align-items-center > .col-md-6.portfolio-wrap {
+    align-items: center !important;
+  }
+  
+  /* Apply margin-top to all images in portfolio section */
+  .ftco-portfolio .row.align-items-center .col-md-6.portfolio-wrap .main-thumb {
+    margin-top: 8rem;
+  }
 }
