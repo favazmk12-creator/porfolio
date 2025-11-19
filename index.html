@@ -243,6 +243,309 @@
     }
 
     /* Second thumbnail now uses responsive styles - no forced constraints */
+    /* Clean responsive styling */
+.first-thumb-wrapper {
+  padding: 0 20px; 
+}
+
+.first-thumb-desc {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  color: #222;
+}
+
+.first-thumb-desc .highlight {
+  background: #ffd782;
+  padding: 0 0.1em 0.05em 0.1em;
+  display: inline-block;
+  margin-bottom: 0.15em;
+}
+
+/* Desktop: allow controlled line breaks */
+.desktop-break {
+  display: inline;
+}
+
+/* Mobile: break lines cleanly */
+.mobile-break {
+  display: none;
+}
+
+/* Mobile overrides */
+@media (max-width: 767px) {
+  .first-thumb-wrapper {
+    padding: 0 12px;
+  }
+
+  .first-thumb-desc {
+    font-size: 1.05rem;
+    line-height: 1.28;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .mobile-break {
+    display: block;
+  }
+}
+/* Fix spacing ONLY for first thumbnail text */
+.first-thumb-desc span {
+  padding: 0 !important; /* remove invisible gaps */
+}
+
+.first-thumb-desc .highlight {
+  padding: 0 0.1em 0.05em 0.1em !important; /* keep yellow highlight padding only */
+}
+/* Fix spacing ONLY for second thumbnail description (desc-col) */
+.desc-col .desc-highlight-block span {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Keep nice padding for yellow highlighted words */
+.desc-col .desc-highlight-block span[style*="background:#ffd782"] {
+  padding: 0 0.1em 0.05em 0.1em !important;
+}
+/* Fix unwanted spacing ONLY for third thumbnail description */
+.row.align-items-center:last-of-type .desc-highlight-block span {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Keep highlight padding clean */
+.row.align-items-center:last-of-type .desc-highlight-block span[style*="background:#ffd782"] {
+  padding: 0 0.1em 0.05em 0.1em !important;
+}
+/* Scroll-based popup effect for thumbnails on mobile */
+.main-thumb.pop-in {
+  transform: scale(0.96) !important;
+  box-shadow: 0 0 40px 16px rgba(30,30,30,0.15),
+              0 0 0 4px rgba(255,255,255,0.7) !important;
+}
+/* Scroll-based popup effect for Instagram posters */
+.instagram-thumb.pop-in {
+  transform: scale(1.04) !important;
+  box-shadow: 0 0 40px 16px rgba(30,30,30,0.15),
+              0 0 0 3px rgba(255,255,255,0.7) !important;
+  z-index: 3;
+}
+/* Scroll-based popup effect for YouTube video thumbnails */
+.video-thumb.pop-in {
+  transform: scale(1.04) !important;
+  box-shadow: 0 0 40px 16px rgba(30,30,30,0.18),
+              0 0 0 3px rgba(255,255,255,0.7) !important;
+  z-index: 3;
+}
+/* Scroll-based popup effect for reels */
+.reel-video.pop-in {
+  transform: scale(1.04) !important;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.28) !important;
+  z-index: 3;
+}
+/* Play icon highlight for centered YouTube thumbnail */
+.video-thumb.center-active .overlay {
+  opacity: 1 !important;
+  transform: scale(1.15);
+}
+
+.video-thumb .overlay {
+  opacity: 0.4; /* normal dimmed state */
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+/* Make YouTube play icon black circle + white triangle */
+.video-thumb .overlay .icon-play {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: black !important;   /* black circle */
+  border-radius: 50%;
+  color: transparent !important; /* hide the original font icon */
+}
+
+.video-thumb .overlay .icon-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  
+  /* white play triangle */
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid white;
+}
+/* When centered, enlarge the play icon */
+.video-thumb.center-active .overlay .icon-play {
+  transform: scale(1.25);
+}
+/* Fine-tune YouTube play triangle position */
+.video-thumb .overlay .icon-play::before {
+  top: 50%;
+  left: 54%;                 /* was ~38% – move closer to center */
+  transform: translate(-50%, -50%);
+  
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid white;
+}
+/* Smooth overlay + icon for Instagram thumbs */
+.instagram-thumb .overlay {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* The poster that is most centered on screen (mobile) */
+.instagram-thumb.insta-center-active .overlay {
+  opacity: 1 !important;
+  transform: scale(1.08);
+}
+/* Slide animation for "Latest & Greatest" without changing fonts */
+.latest-greatest,
+.latest-greatest span {
+  opacity: 0;
+  transition:
+    transform 0.85s cubic-bezier(.23, 1, .32, 1),
+    opacity 0.75s ease-out;
+}
+
+/* Give "Greatest" a slight delay so it follows "Latest &" */
+.latest-greatest span {
+  transition-delay: 0.08s;
+}
+
+/* starting positions (desktop / larger screens) */
+.latest-greatest {
+  transform: translateX(-70px);   /* Latest & from left */
+}
+
+.latest-greatest span {
+  transform: translateX(70px);    /* Greatest from right */
+}
+
+/* when in view */
+.latest-greatest.lg-in-view,
+.latest-greatest.lg-in-view span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* mobile: slightly less distance so it doesn't feel too jumpy */
+@media (max-width: 767.98px) {
+  .latest-greatest {
+    transform: translateX(-45px);
+  }
+  .latest-greatest span {
+    transform: translateX(45px);
+  }
+}
+/* Tighten global vertical spacing between sections */
+.ftco-section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+/* On mobile, a bit tighter */
+@media (max-width: 767.98px) {
+  .ftco-section {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+}
+/* Mobile: highlight the services card that is closest to screen center */
+@media (max-width: 767.98px) {
+  .services.center-scroll-active {
+    background: #ffd782 !important;
+    color: #222 !important;
+  }
+
+  .services.center-scroll-active .heading,
+  .services.center-scroll-active .icon span {
+    color: #222 !important;
+  }
+}
+/* Popup effects – ONLY on mobile widths */
+@media (max-width: 767.98px) {
+
+  /* Popup effect for main thumbnails */
+  .main-thumb.pop-in {
+    transform: scale(0.96) !important;
+    box-shadow: 0 0 40px 16px rgba(30,30,30,0.15),
+                0 0 0 4px rgba(255,255,255,0.7) !important;
+  }
+
+  /* Popup effect for Instagram posters */
+  .instagram-thumb.pop-in {
+    transform: scale(1.04) !important;
+    box-shadow: 0 0 40px 16px rgba(30,30,30,0.15),
+                0 0 0 3px rgba(255,255,255,0.7) !important;
+    z-index: 3;
+  }
+
+  /* Popup effect for YouTube thumbnails */
+  .video-thumb.pop-in {
+    transform: scale(1.04) !important;
+    box-shadow: 0 0 40px 16px rgba(30,30,30,0.18),
+                0 0 0 3px rgba(255,255,255,0.7) !important;
+    z-index: 3;
+  }
+
+  /* Popup effect for reels */
+  .reel-video.pop-in {
+    transform: scale(1.04) !important;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.28) !important;
+    z-index: 3;
+  }
+}
+/* Desktop: reel popup only on hover */
+@media (hover: hover) and (pointer: fine) {
+  .video-wrap:hover .reel-video {
+    transform: scale(1.04);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.28);
+  }
+}
+/* Mobile: reels pop when .pop-in is added (center of screen) */
+@media (max-width: 767.98px) {
+  .reel-video.pop-in {
+    transform: scale(1.04);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.28);
+  }
+}
+/* Mobile: 3 thumbnails pop when .pop-in is added (center of screen) */
+@media (max-width: 767.98px) {
+  .main-thumb {
+    transition: transform 0.3s cubic-bezier(.4,1.4,.6,1),
+                box-shadow 0.3s cubic-bezier(.4,1.4,.6,1);
+  }
+
+  .main-thumb.pop-in {
+    transform: scale(0.96);
+    box-shadow: 0 0 40px 16px rgba(30,30,30,0.15),
+                0 0 0 4px rgba(255,255,255,0.7);
+  }
+}
+/* Mobile: highlight the service card closest to screen center */
+@media (max-width: 767.98px) {
+  .services.center-scroll-active:not(.active):not(.active-2) {
+    background: #ffd782 !important;
+    color: #222 !important;
+  }
+
+  .services.center-scroll-active:not(.active):not(.active-2) .heading,
+  .services.center-scroll-active:not(.active):not(.active-2) .icon span {
+    color: #222 !important;
+  }
+}
+
   </style>
 </head>
 
@@ -365,8 +668,10 @@
       <div class="row justify-content-center pb-3">
         <div class="col-md-12 mb-5 heading-section text-center ftco-animate"
           style="background: #f5f5f7; border-radius: 14px; padding: 32px 0 18px 0;" data-aos="fade-up"
-          data-aos-duration="900" data-aos-once="true">
-          <h2 class="mb-5">Latest &amp; <span>Greatest</span></h2>
+          data-aos-duration="900">
+          <h2 class="mb-5 latest-greatest">
+            Latest &amp; <span>Greatest</span>
+          </h2>                  
         </div>
       </div>
     </div>
@@ -414,7 +719,7 @@
                 class="mobile-only-br"><br></span>
               <span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the
-                struggle of losing attention,</span><span class="mobile-only-br"><br></span><span
+                struggle of losing attention, </span><span class="mobile-only-br"><br></span><span
                 class="desktop-only-br"> </span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">instantly</span><span
                 class="desktop-only-br"><br></span><span class="mobile-only-br"> </span><span
@@ -526,46 +831,37 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 d-flex ftco-animate mb-4">
+        <div class="col-md-4 d-flex ftco-animate mb-4 fadeInUp ftco-animated">
           <div class="video-wrap" style="width:100%; position:relative;">
-            <video class="reel-video" muted loop playsinline poster="images/reel1-poster.jpg"
-              style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+            <video class="reel-video" muted="" loop="" playsinline="" poster="images/reel1-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
               <source src="videos/reel1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <button class="mute-toggle" aria-label="Unmute video"
-              style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i
-                class="bi bi-volume-mute"></i></button>
+            <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
           </div>
         </div>
-
-        <div class="col-md-4 d-flex ftco-animate mb-4">
+    
+        <div class="col-md-4 d-flex ftco-animate mb-4 fadeInUp ftco-animated">
           <div class="video-wrap" style="width:100%; position:relative;">
-            <video class="reel-video" muted loop playsinline poster="images/reel2-poster.jpg"
-              style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+            <video class="reel-video" muted="" loop="" playsinline="" poster="images/reel2-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
               <source src="videos/reel2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <button class="mute-toggle" aria-label="Unmute video"
-              style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i
-                class="bi bi-volume-mute"></i></button>
+            <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
           </div>
         </div>
-
-        <div class="col-md-4 d-flex ftco-animate mb-4">
+    
+        <div class="col-md-4 d-flex ftco-animate mb-4 fadeInUp ftco-animated">
           <div class="video-wrap" style="width:100%; position:relative;">
-            <video class="reel-video" muted loop playsinline poster="images/reel3-poster.jpg"
-              style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
+            <video class="reel-video" muted="" loop="" playsinline="" poster="images/reel3-poster.jpg" style="width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); object-fit: cover; background-color:#000;">
               <source src="videos/reel3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <button class="mute-toggle" aria-label="Unmute video"
-              style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i
-                class="bi bi-volume-mute"></i></button>
+            <button class="mute-toggle" aria-label="Unmute video" style="position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,0.5); color:#fff; border:none; padding:6px 8px; border-radius:6px; cursor:pointer;"><i class="bi bi-volume-mute"></i></button>
           </div>
         </div>
       </div>
-    </div>
+    </div>    
   </section>
 
   <!-- ======= YouTube Work Section ======= -->
@@ -937,7 +1233,393 @@
       });
     })();
   </script>
-
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    // Only activate on mobile screens
+    if (window.innerWidth >= 768 || !('IntersectionObserver' in window)) return;
+  
+    var posters = document.querySelectorAll('.instagram-thumb');
+    if (!posters.length) return;
+  
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        // When the item is nicely visible (center-ish)
+        if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+          entry.target.classList.add('pop-in');
+        } else {
+          entry.target.classList.remove('pop-in');
+        }
+      });
+    }, {
+      threshold: [0.4, 0.55, 0.75]
+    });
+  
+    posters.forEach(function (el) {
+      observer.observe(el);
+    });
+  
+  });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    
+      // Only activate on mobile / small screens
+      if (window.innerWidth >= 768 || !('IntersectionObserver' in window)) return;
+    
+      var videos = document.querySelectorAll('.video-thumb');
+      if (!videos.length) return;
+    
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          // When the video thumb is nicely in view, add pop-in
+          if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+            entry.target.classList.add('pop-in');
+          } else {
+            entry.target.classList.remove('pop-in');
+          }
+        });
+      }, {
+        threshold: [0.4, 0.55, 0.75]
+      });
+    
+      videos.forEach(function (el) {
+        observer.observe(el);
+      });
+    
+    });
+    </script>
+    </body>
+    </html>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+      
+        // Only activate on mobile (not desktop/large screens)
+        if (window.innerWidth >= 768 || !('IntersectionObserver' in window)) return;
+      
+        var reels = document.querySelectorAll('.reel-video');
+        if (!reels.length) return;
+      
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            // Add pop-in when centered enough
+            if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+              entry.target.classList.add('pop-in');
+            } else {
+              entry.target.classList.remove('pop-in');
+            }
+          });
+        }, {
+          threshold: [0.4, 0.55, 0.75]
+        });
+      
+        reels.forEach(function (el) {
+          observer.observe(el);
+        });
+      
+      });
+      </script>
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      
+        // Only run on mobile
+        if (window.innerWidth >= 768) return;
+      
+        const thumbs = document.querySelectorAll(".video-thumb");
+        if (!thumbs.length) return;
+      
+        function updateCenteredThumb() {
+          let closest = null;
+          let closestDistance = Infinity;
+      
+          const screenCenter = window.innerHeight / 2;
+      
+          thumbs.forEach(thumb => {
+            const rect = thumb.getBoundingClientRect();
+            const thumbCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(thumbCenter - screenCenter);
+      
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closest = thumb;
+            }
+          });
+      
+          // Remove active class from all thumbnails
+          thumbs.forEach(t => t.classList.remove("center-active"));
+      
+          // Add active class to the closest one
+          if (closest) closest.classList.add("center-active");
+        }
+      
+        // Run on scroll + initial load
+        window.addEventListener("scroll", updateCenteredThumb, { passive: true });
+        window.addEventListener("resize", updateCenteredThumb);
+        updateCenteredThumb();
+      });
+      </script>
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Only run this behavior on mobile
+          if (window.innerWidth >= 768) return;
+        
+          const igThumbs = document.querySelectorAll(".instagram-thumb");
+          if (!igThumbs.length) return;
+        
+          function updateCenteredInstagram() {
+            let closest = null;
+            let closestDistance = Infinity;
+            const screenCenter = window.innerHeight / 2;
+        
+            igThumbs.forEach(thumb => {
+              const rect = thumb.getBoundingClientRect();
+              const thumbCenter = rect.top + rect.height / 2;
+              const distance = Math.abs(thumbCenter - screenCenter);
+        
+              if (distance < closestDistance) {
+                closestDistance = distance;
+                closest = thumb;
+              }
+            });
+        
+            // Remove active class from all
+            igThumbs.forEach(t => t.classList.remove("insta-center-active"));
+        
+            // Add to the most-centered one
+            if (closest) closest.classList.add("insta-center-active");
+          }
+        
+          window.addEventListener("scroll", updateCenteredInstagram, { passive: true });
+          window.addEventListener("resize", updateCenteredInstagram);
+          updateCenteredInstagram();
+        });
+        </script>
+        </body>
+        </html>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var heading = document.querySelector('.ftco-portfolio .heading-section h2.latest-greatest');
+            if (!heading || !('IntersectionObserver' in window)) return;
+          
+            var observer = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  heading.classList.add('lg-in-view');
+                } else {
+                  heading.classList.remove('lg-in-view');
+                }
+              });
+            }, {
+              threshold: 0.4
+            });
+          
+            observer.observe(heading);
+          });
+          </script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              // Only run on mobile
+              if (window.innerWidth >= 768) return;
+            
+              var cards = document.querySelectorAll('.services-section .services');
+              if (!cards.length) return;
+            
+              function updateCenteredService() {
+                var closest = null;
+                var closestDistance = Infinity;
+                var centerY = window.innerHeight / 2;
+            
+                cards.forEach(function (card) {
+                  var rect = card.getBoundingClientRect();
+                  var cardCenter = rect.top + rect.height / 2;
+                  var distance = Math.abs(cardCenter - centerY);
+            
+                  if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closest = card;
+                  }
+                });
+            
+                cards.forEach(function (c) {
+                  c.classList.remove('center-scroll-active');
+                });
+            
+                if (closest) {
+                  closest.classList.add('center-scroll-active');
+                }
+              }
+            
+              window.addEventListener('scroll', updateCenteredService, { passive: true });
+              window.addEventListener('resize', updateCenteredService);
+              updateCenteredService();
+            });
+            </script>
+            </body>
+            </html>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+              
+                // ----------------------------
+                // DESKTOP (>= 768px)
+                // Hover should trigger popup as before
+                // ----------------------------
+                if (window.innerWidth >= 768) {
+                  // Remove any center-based active states
+                  document.querySelectorAll(
+                    ".video-thumb, .instagram-thumb, .reel-video"
+                  ).forEach(el => el.classList.remove("center-active"));
+              
+                  return; // 🔥 VERY IMPORTANT — stops mobile script from running on desktop
+                }
+              
+                // ----------------------------
+                // MOBILE (< 768px)
+                // Center-detection popup stays active
+                // ----------------------------
+              
+                function setupCenterDetector(selector, activeClass) {
+                  const items = document.querySelectorAll(selector);
+                  if (!items.length) return;
+              
+                  function updateActive() {
+                    let closest = null;
+                    let closestDist = Infinity;
+                    const mid = window.innerHeight / 2;
+              
+                    items.forEach(item => {
+                      const rect = item.getBoundingClientRect();
+                      const center = rect.top + rect.height / 2;
+                      const dist = Math.abs(center - mid);
+              
+                      if (dist < closestDist) {
+                        closestDist = dist;
+                        closest = item;
+                      }
+                    });
+              
+                    items.forEach(i => i.classList.remove(activeClass));
+                    if (closest) closest.classList.add(activeClass);
+                  }
+              
+                  window.addEventListener("scroll", updateActive, { passive: true });
+                  window.addEventListener("resize", updateActive);
+                  updateActive();
+                }
+              
+                // YouTube thumbnails
+                setupCenterDetector(".video-thumb", "center-active");
+              
+                // Instagram posters
+                setupCenterDetector(".instagram-thumb", "center-active");
+              
+                // Reels
+                setupCenterDetector(".video-wrap", "center-active");
+              });
+              </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Run scroll pop-ins ONLY on true touch devices (no hover, coarse pointer)
+    const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  
+    // If this is not a touch device, or IntersectionObserver is missing -> do nothing
+    if (!isTouchDevice || !('IntersectionObserver' in window)) return;
+  
+    function setupPopIn(selector) {
+      var items = document.querySelectorAll(selector);
+      if (!items.length) return;
+  
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+            entry.target.classList.add('pop-in');
+          } else {
+            entry.target.classList.remove('pop-in');
+          }
+        });
+      }, {
+        threshold: [0.4, 0.55, 0.75]
+      });
+  
+      items.forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+  
+    // Scroll-based pop-in ONLY on touch devices
+    setupPopIn('.main-thumb');       // 3 hero thumbnails
+    setupPopIn('.instagram-thumb');  // 16 Instagram posters
+    setupPopIn('.video-thumb');      // 17 YouTube thumbnails
+    setupPopIn('.reel-video');       // 3 reels
+  });
+  </script>  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Only run on mobile / small screens
+      if (window.innerWidth >= 768 || !('IntersectionObserver' in window)) return;
+  
+      var thumbs = document.querySelectorAll('.main-thumb');
+      if (!thumbs.length) return;
+  
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+            entry.target.classList.add('pop-in');
+          } else {
+            entry.target.classList.remove('pop-in');
+          }
+        });
+      }, {
+        threshold: [0.4, 0.55, 0.75]
+      });
+  
+      thumbs.forEach(function (el) {
+        observer.observe(el);
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Only run this behavior on mobile
+      if (window.innerWidth >= 768) return;
+  
+      var cards = document.querySelectorAll('.services-section .services');
+      if (!cards.length) return;
+  
+      function updateCenteredService() {
+        var closest = null;
+        var closestDistance = Infinity;
+        var centerY = window.innerHeight / 2;
+  
+        cards.forEach(function (card) {
+          var rect = card.getBoundingClientRect();
+          var cardCenter = rect.top + rect.height / 2;
+          var distance = Math.abs(cardCenter - centerY);
+  
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closest = card;
+          }
+        });
+  
+        // Clear previous highlight
+        cards.forEach(function (c) {
+          c.classList.remove('center-scroll-active');
+        });
+  
+        // Highlight the one closest to center
+        if (closest) {
+          closest.classList.add('center-scroll-active');
+        }
+      }
+  
+      window.addEventListener('scroll', updateCenteredService, { passive: true });
+      window.addEventListener('resize', updateCenteredService);
+      updateCenteredService(); // run once on load
+    });
+  </script>
+  
 </body>
 
 </html>
