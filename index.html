@@ -91,7 +91,7 @@
     .services:hover:not(.active):not(.active-2),
     .services:focus:not(.active):not(.active-2),
     .services:active:not(.active):not(.active-2) {
-      background: #ffd782 !important;
+      background: #fdcb6e !important;
       color: #222 !important;
     }
 
@@ -106,7 +106,7 @@
 
     /* Ensure yellow hover for services on all devices */
     .services:hover:not(.active):not(.active-2) {
-      background: #ffd782 !important;
+      background: #fdcb6e !important;
       color: #222 !important;
     }
 
@@ -117,7 +117,7 @@
 
     @media (max-width: 767.98px) {
       .services:hover:not(.active):not(.active-2) {
-        background: #ffd782 !important;
+        background: #fdcb6e !important;
         color: #222 !important;
       }
 
@@ -140,7 +140,7 @@
 
     /* Use the same yellow as highlight */
     .services.active-2 {
-      background: #ffd782 !important;
+      background: #fdcb6e !important;
     }
 
     /* Brand & Creator Growth heading and icon white */
@@ -161,7 +161,7 @@
       }
 
       .services.active-2 {
-        background: #ffd782 !important;
+        background: #fdcb6e !important;
       }
     }
 
@@ -259,7 +259,7 @@
 }
 
 .first-thumb-desc .highlight {
-  background: #ffd782;
+  background: #fdcb6e;
   padding: 0 0.1em 0.05em 0.1em;
   display: inline-block;
   margin-bottom: 0.15em;
@@ -309,7 +309,7 @@
 }
 
 /* Keep nice padding for yellow highlighted words */
-.desc-col .desc-highlight-block span[style*="background:#ffd782"] {
+.desc-col .desc-highlight-block span[style*="background:#fdcb6e"] {
   padding: 0 0.1em 0.05em 0.1em !important;
 }
 /* Fix unwanted spacing ONLY for third thumbnail description */
@@ -319,7 +319,7 @@
 }
 
 /* Keep highlight padding clean */
-.row.align-items-center:last-of-type .desc-highlight-block span[style*="background:#ffd782"] {
+.row.align-items-center:last-of-type .desc-highlight-block span[style*="background:#fdcb6e"] {
   padding: 0 0.1em 0.05em 0.1em !important;
 }
 /* Scroll-based popup effect for thumbnails on mobile */
@@ -342,12 +342,13 @@
               0 0 0 3px rgba(255,255,255,0.7) !important;
   z-index: 3;
 }
-/* Scroll-based popup effect for reels */
-.reel-video.pop-in {
-  transform: scale(1.04) !important;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.28) !important;
-  z-index: 3;
-}
+  /* Popup effect for reels */
+  .reel-video.pop-in {
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.32) !important;
+    z-index: 3;
+  }
+
 /* Play icon highlight for centered YouTube thumbnail */
 .video-thumb.center-active .overlay {
   opacity: 1 !important;
@@ -420,7 +421,7 @@
 
 /* Give "Greatest" a slight delay so it follows "Latest &" */
 .latest-greatest span {
-  transition-delay: 0.08s;
+  transition-delay: 0.01s;
 }
 
 /* starting positions (desktop / larger screens) */
@@ -464,7 +465,7 @@
 /* Mobile: highlight the services card that is closest to screen center */
 @media (max-width: 767.98px) {
   .services.center-scroll-active {
-    background: #ffd782 !important;
+    background: #fdcb6e !important;
     color: #222 !important;
   }
 
@@ -499,18 +500,18 @@
     z-index: 3;
   }
 
-  /* Popup effect for reels */
-  .reel-video.pop-in {
-    transform: scale(1.04) !important;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.28) !important;
+   /* Popup effect for reels */
+   .reel-video.pop-in {
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.32) !important;
     z-index: 3;
   }
 }
 /* Desktop: reel popup only on hover */
 @media (hover: hover) and (pointer: fine) {
   .video-wrap:hover .reel-video {
-    transform: scale(1.04);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.28);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.32);
   }
 }
 /* Mobile: reels pop when .pop-in is added (center of screen) */
@@ -536,13 +537,117 @@
 /* Mobile: highlight the service card closest to screen center */
 @media (max-width: 767.98px) {
   .services.center-scroll-active:not(.active):not(.active-2) {
-    background: #ffd782 !important;
+    background: #fdcb6e !important;
     color: #222 !important;
   }
 
   .services.center-scroll-active:not(.active):not(.active-2) .heading,
   .services.center-scroll-active:not(.active):not(.active-2) .icon span {
     color: #222 !important;
+  }
+}
+/* First thumbnail description slide-in animation */
+.first-desc-anim {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.first-desc-anim.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Second thumbnail description slide-in from LEFT */
+.second-desc-anim {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.second-desc-anim.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Third description animation — slide from RIGHT */
+.third-desc-anim {
+  opacity: 0;
+  transform: translateX(50px);  /* come from RIGHT */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.third-desc-anim.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* ==== Reels: soft scale + glow + border (desktop + mobile) ==== */
+
+/* Smooth transitions for all reels */
+.reel-video {
+  transition:
+    transform 0.32s cubic-bezier(.4, 1.4, .6, 1),
+    box-shadow 0.32s cubic-bezier(.4, 1.4, .6, 1),
+    filter 0.32s ease,
+    border 0.32s ease;
+}
+
+/* DESKTOP: hover effect (scale + glow + white border) */
+@media (hover: hover) and (pointer: fine) {
+  .video-wrap:hover .reel-video {
+    transform: scale(1.04);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
+    filter: brightness(1.03);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* MOBILE: when .pop-in is added (center of screen) */
+@media (max-width: 767.98px) {
+  .reel-video.pop-in {
+    transform: scale(1.04);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
+    filter: brightness(1.03);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+  }
+}
+/* ==== Reels: soft scale + glow (desktop + mobile) ==== */
+
+/* Smooth transitions */
+.reel-video {
+  transition:
+    transform 0.3s cubic-bezier(.4, 1.4, .6, 1),
+    box-shadow 0.3s cubic-bezier(.4, 1.4, .6, 1),
+    filter 0.25s ease;
+}
+
+/* Desktop hover effect */
+@media (hover: hover) and (pointer: fine) {
+  .video-wrap:hover .reel-video {
+    transform: scale(1.05);
+    box-shadow:
+/* FINAL WORKING REELS EFFECT — OVERRIDES ALL OTHER RULES */
+.video-wrap .reel-video,
+.reel-video.pop-in {
+  transition: 
+    transform 0.35s cubic-bezier(.4, 1.4, .6, 1) !important,
+    box-shadow 0.35s cubic-bezier(.4, 1.4, .6, 1) !important,
+    filter 0.25s ease !important;
+}
+
+/* Desktop hover effect */
+@media (hover: hover) and (pointer: fine) {
+  .video-wrap:hover .reel-video {
+    transform: scale(1.05) !important;
+    box-shadow: 0 22px 55px rgba(0,0,0,0.30) !important;
+    filter: brightness(1.04) !important;
+  }
+}
+
+/* Mobile center-scroll pop effect */
+@media (max-width: 767.98px) {
+  .reel-video.pop-in {
+    transform: scale(1.05) !important;
+    box-shadow: 0 22px 55px rgba(0,0,0,0.30) !important;
+    filter: brightness(1.04) !important;
   }
 }
 
@@ -609,9 +714,9 @@
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-md-8">
-          <h2><span>Content Writer &amp; Digital Strategist</span> with 3+ Years of Experience in <span>Brand
+          <h2><span>Content Writer &amp; Digital Strategist</span> with an MBA and 3+ Years of Experience in <span>Brand
               Growth</span></h2>
-          <p>I’m Muhammed Favaz Mk — someone who loves turning ideas into clear, meaningful content. I’ve written over
+          <p>I’m Muhammed Favaz Mk — someone who loves turning ideas into clear, meaningful content. With an MBA in Marketing and HR, I’ve written over
             200 scripts and created ad copy and strategies for international brands, helping creators share their
             message in an engaging way.</p>
         </div>
@@ -644,7 +749,7 @@
           <div class="media block-6 services d-block">
             <div class="icon"><span class="flaticon-idea"></span></div>
             <div class="media-body">
-              <h3 class="heading mb-3">Graphic Design</h3>
+              <h3 class="heading mb-3">Creative Graphic Design</h3>
               <p>I create simple, modern graphics and thumbnails that make your content stand out.</p>
             </div>
           </div>
@@ -667,9 +772,9 @@
     <div class="container-fluid">
       <div class="row justify-content-center pb-3">
         <div class="col-md-12 mb-5 heading-section text-center ftco-animate"
-          style="background: #f5f5f7; border-radius: 14px; padding: 32px 0 18px 0;" data-aos="fade-up"
-          data-aos-duration="900">
-          <h2 class="mb-5 latest-greatest">
+          style="background: #f5f5f7; border-radius: 1px; padding: 32px 0 18px 0;" data-aos="fade-up"
+          data-aos-duration="1500">
+          <h2 class="mb-3 latest-greatest">
             Latest &amp; <span>Greatest</span>
           </h2>                  
         </div>
@@ -677,7 +782,7 @@
     </div>
 
     <div class="container">
-      <div class="row justify-content-start pb-5">
+      <div class="row justify-content-start pb-2">
         <div class="col-md-7 heading-section ftco-animate">
           <h2 class="mb-4" style="font-size: 32px;">Thumbnails I Designed</h2>
           <p>Combined mood, color, and composition to spark curiosity while keeping everything visually pleasing and
@@ -709,10 +814,10 @@
         <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
           <div
             style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
-            <div class="desc-highlight-block first-thumb-desc" style="width:100%; text-align:center;">
+            <div class="desc-highlight-block first-thumb-desc first-desc-anim" style="width:100%; text-align:center;">
               <span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">Clear
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">Clear
                 contrast</span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> and
                 expressive visuals highlight</span><span class="desktop-only-br"><br></span><span
@@ -723,11 +828,11 @@
                 class="desktop-only-br"> </span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">instantly</span><span
                 class="desktop-only-br"><br></span><span class="mobile-only-br"> </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">attracting
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">attracting
                 viewers</span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;"> who
                 want </span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">better
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">better
                 focus</span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
             </div>
@@ -735,26 +840,26 @@
         </div>
       </div>
       <div class="row align-items-center thumb-row-2" style="display:flex;">
-        <div class="col-md-6 d-flex align-items-start justify-content-center desc-col">
+        <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">  
           <div
-            style="padding:0 32px 0 10px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
-            <div class="desc-highlight-block" style="width:100%; text-align:center;">
+            style="padding:0 3px 0 15px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
+            <div class="desc-highlight-block second-desc-anim" style="width:100%; text-align:center;">
               <span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"A
                 strong </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">central
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">central
                 visual</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">and
                 clear message make,</span><span class="mobile-only-br"><br></span><span class="desktop-only-br"> </span>
               <span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">the
                 topic easy to </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">understand
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">understand
                 quickly</span><span class="mobile-only-br"><br></span><span class="desktop-only-br">, </span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">encouraging,
                 viewers searching for </span><span class="mobile-only-br"><br></span><span class="desktop-only-br">
               </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">focus
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">focus
                 tips</span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
             </div>
@@ -797,19 +902,19 @@
         <div class="col-md-6 d-flex align-items-start justify-content-center" style="height:100%;">
           <div
             style="padding:0 10px 0 32px; width:100%; max-width:900px; display:flex; align-items:flex-start; justify-content:center; height:100%;">
-            <div class="desc-highlight-block" style="width:100%; text-align:center;">
+            <div class="desc-highlight-block third-desc-anim" style="width:100%; text-align:center;">
               <span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"Dark
                 tones and a </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mysterious
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mysterious
                 vibe</span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">
                 create instant curiosity, making viewers more likely to </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">click
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">click
                 on</span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">
                 topics about hidden </span><span
-                style="background:#ffd782; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mind
+                style="background:#fdcb6e; display:inline-block; font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222; margin-bottom:0.12em; padding:0 0.1em 0.05em 0.1em;">mind
                 tricks</span><span
                 style="font-family:'Lora', serif; font-size:1.25rem; line-height:1.3; font-weight:400; color:#222;">"</span>
             </div>
@@ -965,7 +1070,8 @@
     <div class="container">
       <div class="row justify-content-start pb-5">
         <div class="col-md-7 heading-section ftco-animate">
-          <h2 class="mb-4" style="font-size: 32px;">Videos I Wrote Content For</h2>
+          <h2 class="mgit branch
+b-4" style="font-size: 32px;">Videos I Wrote Content For</h2>
           <p>Audience-focused scripts written for multiple creators across different niches, shaped for clarity,
             engagement, and a smooth narrative flow.</p>
         </div>
@@ -1107,6 +1213,12 @@
     </div>
   </section>
   <!-- ======= End YouTube Work Section ======= -->
+  <div style="background:#f1f1f3; padding:14px 0; margin-top:25px; border-radius:10px;">
+  <p style="text-align:center; font-size:1rem; color:#444; margin:0;">
+    Portfolio Website © Designed & Developed by <strong>Favaz MK</strong>
+  </p>
+</div>
+
 
   <footer class="ftco-footer ftco-section" id="footer-contact">
     <div class="container">
@@ -1118,7 +1230,7 @@
               style="font-size:1.1rem; display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:center; margin-bottom:0;">
               <li style="display:flex; align-items:center; gap:6px;"><span class="icon icon-map-marker"
                   style="color:#fff; opacity:0.92; margin-right:6px;"></span><span class="text"
-                  style="color:#fff; opacity:0.92; font-weight:500;">Kerala, Kochi</span></li>
+                  style="color:#fff; opacity:0.92; font-weight:500;">Kochi, Kerala</span></li>
               <li style="display:flex; align-items:center; gap:6px;"><a href="tel:9061926060"
                   style="color:inherit; text-decoration:none;"><span class="icon icon-phone"
                     style="margin-right:6px;"></span><span class="text">9061926060</span></a></li>
@@ -1619,7 +1731,71 @@
       updateCenteredService(); // run once on load
     });
   </script>
-  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const target = document.querySelector(".first-desc-anim");
+      if (!target || !("IntersectionObserver" in window)) return;
+    
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+              target.classList.add("in-view");
+            } else {
+              target.classList.remove("in-view");
+            }
+          });
+        },
+        { threshold: [0.2, 0.3, 0.5] }
+      );
+    
+      observer.observe(target);
+    });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const second = document.querySelector(".second-desc-anim");
+        if (!second || !("IntersectionObserver" in window)) return;
+      
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                second.classList.add("in-view");
+              } else {
+                second.classList.remove("in-view");
+              }
+            });
+          },
+          { threshold: [0.2, 0.3, 0.5] }
+        );
+      
+        observer.observe(second);
+      });
+      </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const third = document.querySelector(".third-desc-anim");
+        if (!third || !("IntersectionObserver" in window)) return;
+      
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              // active when scrolled DOWN & UP
+              if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                third.classList.add("in-view");
+              } else {
+                third.classList.remove("in-view");
+              }
+            });
+          },
+          { threshold: [0.2, 0.3, 0.5] }
+        );
+      
+        observer.observe(third);
+      });
+      </script>
+        
 </body>
 
 </html>
