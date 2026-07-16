@@ -353,6 +353,61 @@
 		console.warn('Popup fallback script failed:', err);
 	}
 
+	var initScrollReveal = function() {
+		if (!("IntersectionObserver" in window)) {
+			return;
+		}
+
+		document.documentElement.classList.add("has-scroll-animations");
+
+		var sectionGroups = [
+			".ftco-intro .col-md-8, .ftco-intro .col-md-4, .ftco-intro h2, .ftco-intro p",
+			".services-section .col-md-6, .services-section .col-lg-3",
+			".ftco-portfolio .heading-section, .ftco-portfolio .portfolio-wrap, .ftco-portfolio .row.align-items-center",
+			"#instagram-reels .heading-section, #instagram-reels .video-wrap",
+			"#instagram-gallery .heading-section, #instagram-gallery .col-md-4, #instagram-gallery .col-lg-3",
+			"#youtube-work .heading-section, #youtube-work .col-md-4",
+			".ftco-footer .ftco-footer-widget, .ftco-footer .col-md-12"
+		];
+
+		sectionGroups.forEach(function(selector) {
+			document.querySelectorAll(selector).forEach(function(node, index) {
+				if (!node.classList.contains("scroll-reveal")) {
+					node.classList.add("scroll-reveal");
+					node.style.transitionDelay = Math.min(index * 70, 280) + "ms";
+				}
+			});
+		});
+
+		document.querySelectorAll(".services, .video-wrap, .video-thumb").forEach(function(node) {
+			node.classList.add("scroll-lift");
+		});
+
+		document.querySelectorAll(".portfolio-wrap .img, .hero .one-third.img, .hero-wrap").forEach(function(node) {
+			node.classList.add("scroll-zoom");
+		});
+
+		document.querySelectorAll(".heading-section h2, .ftco-intro h2, .ftco-footer-widget h2").forEach(function(node) {
+			node.classList.add("scroll-line");
+		});
+
+		var observer = new IntersectionObserver(function(entries) {
+			entries.forEach(function(entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("is-inview");
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {
+			threshold: 0.18,
+			rootMargin: "0px 0px -8% 0px"
+		});
+
+		document.querySelectorAll(".scroll-reveal, .scroll-lift, .scroll-zoom, .scroll-line").forEach(function(node) {
+			observer.observe(node);
+		});
+	};
+	initScrollReveal();
 
 })(jQuery);
 

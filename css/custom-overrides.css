@@ -8,3 +8,118 @@
 /* If you prefer the image to render at its intrinsic pixel width (not constrained by container),
    add `max-width: none;` above. For responsive layouts, current rules keep aspect ratio and allow
    scaling down on smaller viewports. */
+html.has-scroll-animations {
+  scroll-behavior: smooth;
+}
+
+.scroll-reveal,
+.scroll-lift,
+.scroll-zoom,
+.scroll-line {
+  will-change: transform, opacity;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 48px, 0);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.is-inview {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-lift {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s ease;
+}
+
+.scroll-lift.is-inview {
+  transform: translate3d(0, -10px, 0);
+  box-shadow: 0 20px 45px rgba(17, 17, 17, 0.12);
+}
+
+.scroll-zoom {
+  overflow: hidden;
+}
+
+.scroll-zoom > *,
+.scroll-zoom.reveal-self {
+  transform: scale(0.94);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-zoom.is-inview > *,
+.scroll-zoom.reveal-self.is-inview {
+  transform: scale(1);
+}
+
+.scroll-line {
+  position: relative;
+}
+
+.scroll-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  width: 72px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd782 0%, rgba(255, 215, 130, 0.15) 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-line.is-inview::after {
+  transform: scaleX(1);
+}
+
+.services-section,
+#instagram-reels,
+#instagram-gallery,
+#youtube-work,
+.ftco-footer {
+  position: relative;
+}
+
+.services-section::before,
+#instagram-gallery::before,
+#youtube-work::before {
+  content: "";
+  position: absolute;
+  inset: 8% 4% auto auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 130, 0.18) 0%, rgba(255, 215, 130, 0) 68%);
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+#instagram-reels::before,
+.ftco-footer::before {
+  content: "";
+  position: absolute;
+  inset: auto auto 10% 3%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(24, 24, 24, 0.08) 0%, rgba(24, 24, 24, 0) 70%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.has-scroll-animations {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal,
+  .scroll-lift,
+  .scroll-zoom > *,
+  .scroll-zoom.reveal-self,
+  .scroll-line::after {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
